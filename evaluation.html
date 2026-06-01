@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROID-AI Evaluation — ATD12k Testing Suite</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">ROID<span>-AI</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto me-3 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="evaluation.html">Evaluation</a></li>
+        </ul>
+        <a href="index.html" class="btn-nav nav-link">Back to landing</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="dashboard-section" id="evaluation">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">ATD12k Testing</p>
+        <h2 class="section-title">ATD12k Model Evaluation</h2>
+        <p class="section-subtitle">Evaluation of 2,000 ATD12k samples, grouped by difficulty and summarized with performance metrics.</p>
+      </div>
+
+      <div class="dashboard-panel">
+        <div class="row align-items-center gy-3">
+          <div class="col-lg-8">
+            <p class="dashboard-copy">Evaluate the model on the ATD12k and review overall model quality along with difficulty</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <button id="evalRunBtn" class="btn btn-primary btn-eval" type="button" onclick="runEvaluation()">Run Evaluation</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="evalStatus" class="dashboard-status mt-4" hidden>
+        <span class="status-pill">Ready to execute 2,000 evaluation runs</span>
+      </div>
+
+      <div class="row g-4 mt-4" id="overallStats">
+        <div class="col-sm-6 col-xl-3">
+          <article class="dashboard-card">
+            <span class="dashboard-card-label">PSNR</span>
+            <strong class="dashboard-card-value" id="psnrMean">—</strong>
+            <span class="dashboard-card-meta" id="psnrSd">SD —</span>
+          </article>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <article class="dashboard-card">
+            <span class="dashboard-card-label">SSIM</span>
+            <strong class="dashboard-card-value" id="ssimMean">—</strong>
+            <span class="dashboard-card-meta" id="ssimSd">SD —</span>
+          </article>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <article class="dashboard-card">
+            <span class="dashboard-card-label">LPIPS</span>
+            <strong class="dashboard-card-value" id="lpipsMean">—</strong>
+            <span class="dashboard-card-meta" id="lpipsSd">SD —</span>
+          </article>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <article class="dashboard-card">
+            <span class="dashboard-card-label">Chamfer Distance</span>
+            <strong class="dashboard-card-value" id="cfMean">—</strong>
+            <span class="dashboard-card-meta" id="cfSd">SD —</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="dashboard-breakdown mt-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-3">
+          <div>
+            <p class="section-eyebrow">Category breakdown</p>
+            <h3 class="dashboard-breakdown-title">Easy / Medium / Hard comparison</h3>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-borderless table-hover align-middle">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>PSNR</th>
+                <th>SSIM</th>
+                <th>LPIPS</th>
+                <th>Chamfer Distance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Easy</td>
+                <td id="easyPsnr">—</td>
+                <td id="easySsim">—</td>
+                <td id="easyLpips">—</td>
+                <td id="easyCf">—</td>
+              </tr>
+              <tr>
+                <td>Medium</td>
+                <td id="mediumPsnr">—</td>
+                <td id="mediumSsim">—</td>
+                <td id="mediumLpips">—</td>
+                <td id="mediumCf">—</td>
+              </tr>
+              <tr>
+                <td>Hard</td>
+                <td id="hardPsnr">—</td>
+                <td id="hardSsim">—</td>
+                <td id="hardLpips">—</td>
+                <td id="hardCf">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="footer-brand">ROID-AI</div>
+          <div class="footer-tagline">ROI-Guided Deformable Convolutions<br>for Automated Anime In-Betweening</div>
+        </div>
+        <div class="col-6 col-md-2 offset-md-2">
+          <div class="footer-heading">Tool</div>
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="index.html#gallery">Gallery</a>
+          <a class="footer-link" href="index.html#how-it-works">How it works</a>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="footer-heading">Support</div>
+          <a class="footer-link" href="index.html#scope">Scope &amp; Limits</a>
+          <a class="footer-link" href="index.html#faq">FAQ</a>
+          <a class="footer-link" href="index.html">Contact</a>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="footer-heading">Legal</div>
+          <a class="footer-link" href="#">Privacy Policy</a>
+          <a class="footer-link" href="#">Terms of Use</a>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="footer-copy">© 2025 ROID-AI. All rights reserved. Built for anime production studios.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
