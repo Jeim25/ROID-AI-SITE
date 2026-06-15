@@ -482,8 +482,19 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--display-font); }
 .dashboard-copy {
   color: var(--text-secondary);
   font-size: 0.96rem;
-  max-width: 720px;
+  width: 100%;
+  max-width: none;
   margin-bottom: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.7;
+}
+.dashboard-panel {
+  overflow: visible;
+}
+.dashboard-panel .row {
+  align-items: stretch;
 }
 .btn-eval {
   padding: 0.95rem 1.6rem;
@@ -531,9 +542,37 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--display-font); }
   font-size: 0.85rem;
   color: var(--text-secondary);
 }
+.dashboard-breakdown {
+  text-align: center;
+}
+.dashboard-breakdown > .d-flex {
+  justify-content: center !important;
+  flex-wrap: wrap;
+}
 .dashboard-breakdown-title {
   font-size: 1.2rem;
-  margin: 0;
+  margin: 0 auto 0.5rem;
+  max-width: 100%;
+}
+.dashboard-breakdown .table-responsive {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+.dashboard-breakdown table {
+  margin: 0 auto;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.dashboard-breakdown table th,
+.dashboard-breakdown table td {
+  width: 20%;
+  text-align: center;
+  padding: 1rem 1rem;
 }
 .dashboard-note {
   color: var(--text-secondary);
