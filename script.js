@@ -100,14 +100,14 @@ function toggleFaq(item) {
 
 const performanceSummary = {
   overall: {
-    psnr: { mean: 31.45, sd: 2.15 },
-    ssim: { mean: 0.928, sd: 0.023 },
-    lpips: { mean: 0.0482, sd: 0.0115 },
-    cf: { mean: 87.3, sd: 5.9 }
+    psnr: { mean: 29.25, sd: 4.96 },
+    ssim: { mean: 0.950, sd: 0.03 },
+    lpips: { mean: 6.32, sd: 5.10 },
+    cf: { mean: 5.08, sd: 5.89 }
   },
-  easy: { psnr: 33.8, ssim: 0.962, lpips: 0.0280, cf: 94.1 },
-  medium: { psnr: 31.2, ssim: 0.925, lpips: 0.0460, cf: 88.5 },
-  hard: { psnr: 28.4, ssim: 0.889, lpips: 0.0710, cf: 78.0 }
+  easy:   { psnr: 31.56, ssim: 0.960, lpips: 3.70, cf: 2.51 },
+  medium: { psnr: 28.29, ssim: 0.950, lpips: 5.97, cf: 4.51 },
+  hard:   { psnr: 26.85, ssim: 0.930, lpips: 1.09, cf: 9.87 }
 };
 
 function populatePerformanceMetrics() {
