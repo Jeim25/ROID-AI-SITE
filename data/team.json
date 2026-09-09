@@ -1,0 +1,94 @@
+[
+  {
+    "id": "member-1",
+    "name": "Member 1",
+    "role": "Lead Researcher",
+    "bio": "Spearheaded the ROID-AI neural network architecture design, ROI-guided deformable convolution integration, and the official interactive research platform. Led the end-to-end implementation and repository workflows.",
+    "image": "assets/images/team-member-1.jpg",
+    "placeholder": {
+      "initials": "JM",
+      "tag": "Lead Dev",
+      "bgClass": "bg-purple-600"
+    },
+    "social": {
+      "github": "https://github.com/Jeim25",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "jeimv@example.com"
+    },
+    "contributions": [
+      "Engineered ROI detection & deformable convolution layers",
+      "Architected the web UI & evaluation benchmark dashboards",
+      "Managed repository pipelines and model deployment interfaces"
+    ]
+  },
+  {
+    "id": "member-2",
+    "name": "Member 2",
+    "role": "Lead Developer",
+    "bio": "Focused on mathematical modeling of non-linear character motions, deformable offset estimation, and optical flow refinements to eliminate ghosting artifacts across large displacement keyframes.",
+    "image": "assets/images/team-member-2.jpg",
+    "placeholder": {
+      "initials": "TM",
+      "tag": "CV Researcher",
+      "bgClass": "bg-purple-800"
+    },
+    "social": {
+      "github": "#",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "member2@example.com"
+    },
+    "contributions": [
+      "Formulated 2D offset sampling for fast character animations",
+      "Conducted loss function optimization (L1, Perceptual & Smoothness)",
+      "Authored methodology & related works research literature"
+    ]
+  },
+  {
+    "id": "member-3",
+    "name": "Member 3",
+    "role": "Researcher & Developer",
+    "bio": "Managed the ATD-12K dataset curation, high-resolution keyframe pairing, data augmentation pipelines, and motion difficulty classification into Easy, Medium, and Hard cohorts.",
+    "image": "assets/images/team-member-3.jpg",
+    "placeholder": {
+      "initials": "TM",
+      "tag": "Data Specialist",
+      "bgClass": "bg-purple-600"
+    },
+    "social": {
+      "github": "#",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "member3@example.com"
+    },
+    "contributions": [
+      "Curated & normalized 2,000+ ATD-12k test triplets",
+      "Engineered data loaders and bounding box ROI annotators",
+      "Co-authored dataset methodology and validation documentation"
+    ]
+  },
+  {
+    "id": "member-4",
+    "name": "Member 4",
+    "role": "Researcher & Developer",
+    "bio": "Led quantitative validation across PSNR, SSIM, LPIPS, and Chamfer Distance metrics. Designed comparative benchmarks between ROID-AI and baseline state-of-the-art models like AnimeInterp.",
+    "image": "assets/images/team-member-4.jpg",
+    "placeholder": {
+      "initials": "TM",
+      "tag": "Benchmarking",
+      "bgClass": "bg-purple-900"
+    },
+    "social": {
+      "github": "#",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "member4@example.com"
+    },
+    "contributions": [
+      "Executed statistical metric computations across 2k triplets",
+      "Created qualitative visual comparison reports for anime studios",
+      "Led thesis results documentation and comparative analyses"
+    ]
+  }
+]
