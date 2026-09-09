@@ -1,8 +1,9 @@
 # Dependencies
 node_modules/
 
-# Tailwind build output (regenerated via npm run build)
-dist/
+# Tailwind build output (dist/output.css tracked for GitHub Pages)
+dist/*
+!dist/output.css
 
 # OS files
 .DS_Store
