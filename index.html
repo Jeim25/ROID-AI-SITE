@@ -160,141 +160,120 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="how-section" id="how-it-works">
-    <div class="container">
-      <div class="text-center mb-5">
-        <p class="section-eyebrow">Process</p>
-        <h2 class="section-title">How ROID-AI Works</h2>
-        <p class="section-subtitle">From two keyframes to a production-ready in-between in four steps</p>
+  <section class="py-16" id="how-it-works">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading">
+        <h2>How ROID-AI Works</h2>
+        <p>From two keyframes to a production-ready in-between in four steps</p>
       </div>
-      <div class="row g-3">
-        <div class="col-6 col-md-3">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <div class="step-tag">Input</div>
-            <p class="step-title">Upload Gengas</p>
-            <p class="step-desc">Provide two fully composited JPG keyframes at 1920×1080 from your animation timeline.</p>
-          </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+
+        <div class="card-base rounded-2xl p-7 text-center">
+          <div class="w-11 h-11 bg-purple-50 border-2 border-purple-200 rounded-full flex items-center justify-center font-display font-bold text-sm text-purple-600 mx-auto mb-4 spec-mono">1</div>
+          <p class="font-display text-sm font-bold text-text-primary mb-2">Upload Gengas</p>
+          <p class="text-sm text-text-secondary leading-relaxed">Provide two fully composited <span class="spec-mono">JPG</span> keyframes at <span class="spec-mono">1920×1080</span> from your animation timeline.</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="step-card">
-            <div class="step-number">2.1</div>
-            <div class="step-tag">Optical Flow</div>
-            <p class="step-title">Flow Estimation</p>
-            <p class="step-desc">The model segments color regions and recurrently refines bidirectional optical flow between frames.</p>
-          </div>
+
+        <div class="card-base rounded-2xl p-7 text-center">
+          <div class="w-11 h-11 bg-purple-50 border-2 border-purple-200 rounded-full flex items-center justify-center font-display font-bold text-sm text-purple-600 mx-auto mb-4 spec-mono">2</div>
+          <p class="font-display text-sm font-bold text-text-primary mb-2">Flow Estimation</p>
+          <p class="text-sm text-text-secondary leading-relaxed">The model segments color regions and recurrently refines bidirectional optical flow between frames.</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="step-card">
-            <div class="step-number">2.2</div>
-            <div class="step-tag">Detection</div>
-            <p class="step-title">ROI Detection</p>
-            <p class="step-desc">Color filters and motion magnitude maps identify high-priority regions of the frame for synthesis.</p>
-          </div>
+
+        <div class="card-base rounded-2xl p-7 text-center">
+          <div class="w-11 h-11 bg-purple-50 border-2 border-purple-200 rounded-full flex items-center justify-center font-display font-bold text-sm text-purple-600 mx-auto mb-4 spec-mono">3</div>
+          <p class="font-display text-sm font-bold text-text-primary mb-2">ROI Detection</p>
+          <p class="text-sm text-text-secondary leading-relaxed">Color filters and motion magnitude maps identify high-priority regions of the frame for synthesis.</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <div class="step-tag">Output</div>
-            <p class="step-title">Download Douga</p>
-            <p class="step-desc">DCMv2 synthesizes the in-between frame. Download it as a JPG ready for production.</p>
-          </div>
+
+        <div class="card-base rounded-2xl p-7 text-center">
+          <div class="w-11 h-11 bg-purple-50 border-2 border-purple-200 rounded-full flex items-center justify-center font-display font-bold text-sm text-purple-600 mx-auto mb-4 spec-mono">4</div>
+          <p class="font-display text-sm font-bold text-text-primary mb-2">Download Douga</p>
+          <p class="text-sm text-text-secondary leading-relaxed">DCMv2 synthesizes the in-between frame. Download it as a <span class="spec-mono">JPG</span> ready for production.</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section class="gallery-section" id="gallery">
-    <div class="container">
-      <div class="text-center mb-2">
-        <p class="section-eyebrow">Examples</p>
-        <h2 class="section-title">Example Outputs</h2>
+  <section class="py-16 bg-card-bg border-t border-b border-border" id="gallery">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading">
+        <h2>Example Outputs</h2>
       </div>
 
-      <div class="row g-4" id="galleryGrid">
+      <div class="flex flex-col gap-4" id="galleryGrid">
 
         <!-- Example card 1 -->
-        <div class="col-12">
-          <div class="gallery-card">
-            <div class="gallery-frames-row">
-              <div class="gallery-slot">
-                <span class="gallery-slot-tag tag-genga">Genga</span>
-                <img src="frame1.png" alt="Example 1 — Genga A" />
-              </div>
-              <div class="gallery-arrow-col">›</div>
-              <div class="gallery-slot douga">
-                <span class="gallery-slot-tag tag-douga">Douga</span>
-                <img src="frame2.png" alt="Example 1 — Douga" />
-              </div>
-              <div class="gallery-arrow-col">›</div>
-              <div class="gallery-slot">
-                <span class="gallery-slot-tag tag-genga">Genga</span>
-                <img src="frame3.png" alt="Example 1 — Genga B" />
-              </div>
+        <div class="bg-lavender-bg border border-border rounded-2xl p-5 transition-all duration-200 hover:border-purple-200 hover:-translate-y-0.5 hover:shadow-lg">
+          <div class="gallery-frames-grid grid grid-cols-[1fr_18px_1fr_18px_1fr] gap-0 items-center mb-4">
+            <div class="gallery-slot">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-600 text-white">Genga</span>
+              <img src="frame1.png" alt="Example 1 — Genga A" />
             </div>
-            <div class="gallery-meta">
-              <div>
-                <div class="scene-name">Example Set 1</div>
-              </div>
-              <span class="gallery-badge">Genga › Douga › Genga</span>
+            <div class="flex items-center justify-center text-purple-200 text-base">›</div>
+            <div class="gallery-slot douga">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-400 text-white">Douga</span>
+              <img src="frame2.png" alt="Example 1 — Douga" />
             </div>
+            <div class="flex items-center justify-center text-purple-200 text-base">›</div>
+            <div class="gallery-slot">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-600 text-white">Genga</span>
+              <img src="frame3.png" alt="Example 1 — Genga B" />
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-sm font-bold text-text-primary">Example Set 1</span>
+            <span class="text-xs text-text-muted">Genga › Douga › Genga</span>
           </div>
         </div>
 
         <!-- Example card 2 -->
-        <div class="col-12">
-          <div class="gallery-card">
-            <div class="gallery-frames-row">
-              <div class="gallery-slot">
-                <span class="gallery-slot-tag tag-genga">Genga</span>
-                <img src="frame1(1).png" alt="Example 2 — Genga A" />
-              </div>
-              <div class="gallery-arrow-col">›</div>
-              <div class="gallery-slot douga">
-                <span class="gallery-slot-tag tag-douga">Douga</span>
-                <img src="frame2(1).png" alt="Example 2 — Douga" />
-              </div>
-              <div class="gallery-arrow-col">›</div>
-              <div class="gallery-slot">
-                <span class="gallery-slot-tag tag-genga">Genga</span>
-                <img src="frame3(1).png" alt="Example 2 — Genga B" />
-              </div>
+        <div class="bg-lavender-bg border border-border rounded-2xl p-5 transition-all duration-200 hover:border-purple-200 hover:-translate-y-0.5 hover:shadow-lg">
+          <div class="gallery-frames-grid grid grid-cols-[1fr_18px_1fr_18px_1fr] gap-0 items-center mb-4">
+            <div class="gallery-slot">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-600 text-white">Genga</span>
+              <img src="frame1(1).png" alt="Example 2 — Genga A" />
             </div>
-            <div class="gallery-meta">
-              <div>
-                <div class="scene-name">Example Set 2</div>
-              </div>
-              <span class="gallery-badge">Genga › Douga › Genga</span>
+            <div class="flex items-center justify-center text-purple-200 text-base">›</div>
+            <div class="gallery-slot douga">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-400 text-white">Douga</span>
+              <img src="frame2(1).png" alt="Example 2 — Douga" />
             </div>
+            <div class="flex items-center justify-center text-purple-200 text-base">›</div>
+            <div class="gallery-slot">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-600 text-white">Genga</span>
+              <img src="frame3(1).png" alt="Example 2 — Genga B" />
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-sm font-bold text-text-primary">Example Set 2</span>
+            <span class="text-xs text-text-muted">Genga › Douga › Genga</span>
           </div>
         </div>
 
         <!-- Example card 3 -->
-        <div class="col-12">
-          <div class="gallery-card">
-            <div class="gallery-frames-row">
-              <div class="gallery-slot">
-                <span class="gallery-slot-tag tag-genga">Genga</span>
-                <img src="frame1(2).png" alt="Example 3 — Genga A" />
-              </div>
-              <div class="gallery-arrow-col">›</div>
-              <div class="gallery-slot douga">
-                <span class="gallery-slot-tag tag-douga">Douga</span>
-                <img src="frame2(2).png" alt="Example 3 — Douga" />
-              </div>
-              <div class="gallery-arrow-col">›</div>
-              <div class="gallery-slot">
-                <span class="gallery-slot-tag tag-genga">Genga</span>
-                <img src="frame3(2).png" alt="Example 3 — Genga B" />
-              </div>
+        <div class="bg-lavender-bg border border-border rounded-2xl p-5 transition-all duration-200 hover:border-purple-200 hover:-translate-y-0.5 hover:shadow-lg">
+          <div class="gallery-frames-grid grid grid-cols-[1fr_18px_1fr_18px_1fr] gap-0 items-center mb-4">
+            <div class="gallery-slot">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-600 text-white">Genga</span>
+              <img src="frame1(2).png" alt="Example 3 — Genga A" />
             </div>
-            <div class="gallery-meta">
-              <div>
-                <div class="scene-name">Example Set 3</div>
-              </div>
-              <span class="gallery-badge">Genga › Douga › Genga</span>
+            <div class="flex items-center justify-center text-purple-200 text-base">›</div>
+            <div class="gallery-slot douga">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-400 text-white">Douga</span>
+              <img src="frame2(2).png" alt="Example 3 — Douga" />
             </div>
+            <div class="flex items-center justify-center text-purple-200 text-base">›</div>
+            <div class="gallery-slot">
+              <span class="absolute top-1.5 left-1.5 font-display text-xs font-bold tracking-wide px-1.5 py-0.5 rounded-lg bg-purple-600 text-white">Genga</span>
+              <img src="frame3(2).png" alt="Example 3 — Genga B" />
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-display text-sm font-bold text-text-primary">Example Set 3</span>
+            <span class="text-xs text-text-muted">Genga › Douga › Genga</span>
           </div>
         </div>
 
@@ -303,61 +282,94 @@
   </section>
 
   <!-- SCOPE -->
-  <section class="scope-section" id="scope">
-    <div class="container">
-      <div class="text-center mb-5">
-        <p class="section-eyebrow">Before You Upload</p>
-        <h2 class="section-title">Scope &amp; Limitations</h2>
-        <p class="section-subtitle">Know what the model supports before you begin</p>
+  <section class="py-16" id="scope">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading">
+        <h2>Scope &amp; Limitations</h2>
+        <p>Know what the model supports before you begin</p>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="scope-card supported">
-            <div class="scope-card-title"><span class="scope-dot"></span>Supported</div>
-            <div class="scope-item"><span class="scope-icon">✓</span><span>Fully composited genga (clean line art + color)</span></div>
-            <div class="scope-item"><span class="scope-icon">✓</span><span>JPG file format</span></div>
-            <div class="scope-item"><span class="scope-icon">✓</span><span>1920×1080 resolution only</span></div>
-            <div class="scope-item"><span class="scope-icon">✓</span><span>Single continuous motion sequences</span></div>
-            <div class="scope-item"><span class="scope-icon">✓</span><span>Generation of one in-between frame</span></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Supported -->
+        <div class="rounded-2xl p-8 h-full bg-success-bg border border-success-border">
+          <div class="font-display text-base font-bold mb-5 flex items-center gap-2 text-success-text">
+            <span class="status-dot bg-success-dot"></span>Supported
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-success-dot mt-0.5 shrink-0">✓</span>
+            <span>Fully composited genga (clean line art + color)</span>
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-success-dot mt-0.5 shrink-0">✓</span>
+            <span><span class="spec-mono">JPG</span> file format</span>
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-success-dot mt-0.5 shrink-0">✓</span>
+            <span><span class="spec-mono">1920×1080</span> resolution only</span>
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-success-dot mt-0.5 shrink-0">✓</span>
+            <span>Single continuous motion sequences</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm leading-relaxed">
+            <span class="text-success-dot mt-0.5 shrink-0">✓</span>
+            <span>Generation of one in-between frame</span>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="scope-card not-supported">
-            <div class="scope-card-title"><span class="scope-dot"></span>Not Supported</div>
-            <div class="scope-item"><span class="scope-icon">✕</span><span>Rough sketches or uncolored line art</span></div>
-            <div class="scope-item"><span class="scope-icon">✕</span><span>Non-JPG file formats (PNG, TIFF, etc.)</span></div>
-            <div class="scope-item"><span class="scope-icon">✕</span><span>Resolutions other than 1920×1080</span></div>
-            <div class="scope-item"><span class="scope-icon">✕</span><span>Scene cuts between unrelated shots</span></div>
-            <div class="scope-item"><span class="scope-icon">✕</span><span>Multi-frame generation in one pass</span></div>
+
+        <!-- Not Supported -->
+        <div class="rounded-2xl p-8 h-full bg-danger-bg border border-danger-border">
+          <div class="font-display text-base font-bold mb-5 flex items-center gap-2 text-danger-text">
+            <span class="status-dot bg-danger-dot"></span>Not Supported
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-danger-dot mt-0.5 shrink-0">✕</span>
+            <span>Rough sketches or uncolored line art</span>
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-danger-dot mt-0.5 shrink-0">✕</span>
+            <span>Non-<span class="spec-mono">JPG</span> file formats (<span class="spec-mono">PNG</span>, <span class="spec-mono">TIFF</span>, etc.)</span>
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-danger-dot mt-0.5 shrink-0">✕</span>
+            <span>Resolutions other than <span class="spec-mono">1920×1080</span></span>
+          </div>
+          <div class="flex items-start gap-2.5 mb-3 text-sm leading-relaxed">
+            <span class="text-danger-dot mt-0.5 shrink-0">✕</span>
+            <span>Scene cuts between unrelated shots</span>
+          </div>
+          <div class="flex items-start gap-2.5 text-sm leading-relaxed">
+            <span class="text-danger-dot mt-0.5 shrink-0">✕</span>
+            <span>Multi-frame generation in one pass</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="text-center mb-5">
-        <p class="section-eyebrow">Help</p>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Everything you need to know before using ROID-AI in your production pipeline</p>
+  <section class="py-12 bg-card-bg border-t border-border" id="faq">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know before using ROID-AI in your production pipeline</p>
       </div>
-      <div style="max-width:720px; margin:0 auto;">
+      <div class="max-w-3xl mx-auto">
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <button class="faq-question">What file format and resolution do my keyframes need to be?<svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="faq-answer">ROID-AI currently only accepts JPG files at exactly 1920×1080 pixels. Both Frame 0 and Frame 1 must be fully composited genga — meaning clean, colored anime cels, not rough pencil sketches. Mismatched resolutions or PNG/TIFF formats will cause an error.</div>
+          <div class="faq-answer">ROID-AI currently only accepts <span class="spec-mono">JPG</span> files at exactly <span class="spec-mono">1920×1080</span> pixels. Both Frame 0 and Frame 1 must be fully composited genga — meaning clean, colored anime cels, not rough pencil sketches. Mismatched resolutions or <span class="spec-mono">PNG</span>/<span class="spec-mono">TIFF</span> formats will cause an error.</div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <button class="faq-question">How long does it take to generate one in-between frame?<svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="faq-answer">Processing time is typically under 15 seconds per pair of keyframes, depending on server load. The DCMv2 model performs bidirectional optical flow estimation followed by ROI-guided synthesis — both stages are GPU-accelerated.</div>
+          <div class="faq-answer">Processing time is typically under <span class="spec-mono">15</span> seconds per pair of keyframes, depending on server load. The DCMv2 model performs bidirectional optical flow estimation followed by ROI-guided synthesis — both stages are GPU-accelerated.</div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <button class="faq-question">Can I generate more than one in-between frame at a time?<svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="faq-answer">Not yet. The current version of ROID-AI generates exactly one in-between frame per request. Multi-frame batch generation (x2, x4) is planned for a future release. For now, you can chain multiple requests sequentially.</div>
+          <div class="faq-answer">Not yet. The current version of ROID-AI generates exactly one in-between frame per request. Multi-frame batch generation (×2, ×4) is planned for a future release. For now, you can chain multiple requests sequentially.</div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
@@ -367,7 +379,7 @@
 
         <div class="faq-item" onclick="toggleFaq(this)">
           <button class="faq-question">Is the generated frame ready for production use?<svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="faq-answer">The output is a 1920×1080 JPG at studio-standard quality, intended as a starting point for your production pipeline. We recommend reviewing the output before final render, particularly for complex multi-character scenes.</div>
+          <div class="faq-answer">The output is a <span class="spec-mono">1920×1080</span> <span class="spec-mono">JPG</span> at studio-standard quality, intended as a starting point for your production pipeline. We recommend reviewing the output before final render, particularly for complex multi-character scenes.</div>
         </div>
 
         <div class="faq-item" onclick="toggleFaq(this)">
@@ -378,36 +390,36 @@
       </div>
     </div>
   </section>
-  
+
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="footer-brand">ROID-AI</div>
-          <div class="footer-tagline">ROI-Guided Deformable Convolutions<br>for Automated Anime In-Betweening</div>
+  <footer class="bg-purple-900 pt-14 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8">
+        <div class="col-span-2 md:col-span-1">
+          <div class="font-display font-bold text-xl text-white mb-1.5">ROID-AI</div>
+          <div class="text-sm text-white/45 leading-relaxed">ROI-Guided Deformable Convolutions<br>for Automated Anime In-Betweening</div>
         </div>
-        <div class="col-6 col-md-2 offset-md-2">
-          <div class="footer-heading">Tool</div>
-          <a class="footer-link" href="#tool">Try it free</a>
-          <a class="footer-link" href="#gallery">Gallery</a>
-          <a class="footer-link" href="#how-it-works">How it works</a>
+        <div>
+          <div class="font-display text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Tool</div>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#tool">Try it free</a>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#gallery">Gallery</a>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#how-it-works">How it works</a>
         </div>
-        <div class="col-6 col-md-2">
-          <div class="footer-heading">Support</div>
-          <a class="footer-link" href="#scope">Scope &amp; Limits</a>
-          <a class="footer-link" href="#faq">FAQ</a>
-          <a class="footer-link" href="#">Contact</a>
+        <div>
+          <div class="font-display text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Support</div>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#scope">Scope &amp; Limits</a>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#faq">FAQ</a>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#">Contact</a>
         </div>
-        <div class="col-6 col-md-2">
-          <div class="footer-heading">Legal</div>
-          <a class="footer-link" href="#">Privacy Policy</a>
-          <a class="footer-link" href="#">Terms of Use</a>
+        <div>
+          <div class="font-display text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Legal</div>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#">Privacy Policy</a>
+          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#">Terms of Use</a>
         </div>
       </div>
-      <hr class="footer-divider" />
-      <p class="footer-copy">© 2025 ROID-AI. All rights reserved. Built for anime production studios.</p>
+      <hr class="border-white/8 my-10" />
+      <p class="text-xs text-white/30">© 2025 ROID-AI. All rights reserved. Built for anime production studios.</p>
     </div>
   </footer>
 
