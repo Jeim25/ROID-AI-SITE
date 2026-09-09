@@ -101,46 +101,149 @@ function toggleFaq(item) {
   if (!isOpen) item.classList.add('open');
 }
 
-const performanceSummary = {
+// Default metrics fallback
+const defaultPerformanceSummary = {
   overall: {
     psnr: { mean: 29.25, sd: 4.96 },
     ssim: { mean: 0.950, sd: 0.03 },
     lpips: { mean: 6.32, sd: 5.10 },
     cf: { mean: 5.08, sd: 5.89 }
   },
-  easy:   { psnr: 31.56, ssim: 0.960, lpips: 3.70, cf: 2.51 },
-  medium: { psnr: 28.29, ssim: 0.950, lpips: 5.97, cf: 4.51 },
-  hard:   { psnr: 26.85, ssim: 0.930, lpips: 1.09, cf: 9.87 }
+  breakdown: {
+    easy:   { psnr: 31.56, ssim: 0.960, lpips: 3.70, cf: 2.51 },
+    medium: { psnr: 28.29, ssim: 0.950, lpips: 5.97, cf: 4.51 },
+    hard:   { psnr: 26.85, ssim: 0.930, lpips: 1.09, cf: 9.87 }
+  }
 };
 
-function populatePerformanceMetrics() {
+async function loadPerformanceMetrics() {
+  try {
+    const res = await fetch('./data/metrics.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.info('Loaded fallback performance metrics:', err.message);
+    return defaultPerformanceSummary;
+  }
+}
+
+async function populatePerformanceMetrics() {
   const psnrEl = document.getElementById('psnrMean');
   if (!psnrEl) return;
-  const summary = performanceSummary;
 
-  document.getElementById('psnrMean').textContent = summary.overall.psnr.mean.toFixed(2);
-  document.getElementById('psnrSd').textContent = `SD ${summary.overall.psnr.sd.toFixed(2)}`;
-  document.getElementById('ssimMean').textContent = summary.overall.ssim.mean.toFixed(3);
-  document.getElementById('ssimSd').textContent = `SD ${summary.overall.ssim.sd.toFixed(3)}`;
-  document.getElementById('lpipsMean').textContent = summary.overall.lpips.mean.toFixed(4);
-  document.getElementById('lpipsSd').textContent = `SD ${summary.overall.lpips.sd.toFixed(4)}`;
-  document.getElementById('cfMean').textContent = summary.overall.cf.mean.toFixed(1);
-  document.getElementById('cfSd').textContent = `SD ${summary.overall.cf.sd.toFixed(1)}`;
+  const data = await loadPerformanceMetrics();
+  const overall = data.overall || defaultPerformanceSummary.overall;
+  const breakdown = data.breakdown || defaultPerformanceSummary.breakdown;
 
-  document.getElementById('easyPsnr').textContent = summary.easy.psnr.toFixed(2);
-  document.getElementById('easySsim').textContent = summary.easy.ssim.toFixed(3);
-  document.getElementById('easyLpips').textContent = summary.easy.lpips.toFixed(4);
-  document.getElementById('easyCf').textContent = summary.easy.cf.toFixed(1);
+  if (overall.psnr) {
+    document.getElementById('psnrMean').textContent = overall.psnr.mean.toFixed(2);
+    document.getElementById('psnrSd').textContent = `SD ${overall.psnr.sd.toFixed(2)}`;
+  }
+  if (overall.ssim) {
+    document.getElementById('ssimMean').textContent = overall.ssim.mean.toFixed(3);
+    document.getElementById('ssimSd').textContent = `SD ${overall.ssim.sd.toFixed(3)}`;
+  }
+  if (overall.lpips) {
+    document.getElementById('lpipsMean').textContent = overall.lpips.mean.toFixed(4);
+    document.getElementById('lpipsSd').textContent = `SD ${overall.lpips.sd.toFixed(4)}`;
+  }
+  if (overall.cf) {
+    document.getElementById('cfMean').textContent = overall.cf.mean.toFixed(1);
+    document.getElementById('cfSd').textContent = `SD ${overall.cf.sd.toFixed(1)}`;
+  }
 
-  document.getElementById('mediumPsnr').textContent = summary.medium.psnr.toFixed(2);
-  document.getElementById('mediumSsim').textContent = summary.medium.ssim.toFixed(3);
-  document.getElementById('mediumLpips').textContent = summary.medium.lpips.toFixed(4);
-  document.getElementById('mediumCf').textContent = summary.medium.cf.toFixed(1);
+  const easy = breakdown.easy || defaultPerformanceSummary.breakdown.easy;
+  if (easy) {
+    document.getElementById('easyPsnr').textContent = easy.psnr.toFixed(2);
+    document.getElementById('easySsim').textContent = easy.ssim.toFixed(3);
+    document.getElementById('easyLpips').textContent = easy.lpips.toFixed(4);
+    document.getElementById('easyCf').textContent = easy.cf.toFixed(1);
+  }
 
-  document.getElementById('hardPsnr').textContent = summary.hard.psnr.toFixed(2);
-  document.getElementById('hardSsim').textContent = summary.hard.ssim.toFixed(3);
-  document.getElementById('hardLpips').textContent = summary.hard.lpips.toFixed(4);
-  document.getElementById('hardCf').textContent = summary.hard.cf.toFixed(1);
+  const medium = breakdown.medium || defaultPerformanceSummary.breakdown.medium;
+  if (medium) {
+    document.getElementById('mediumPsnr').textContent = medium.psnr.toFixed(2);
+    document.getElementById('mediumSsim').textContent = medium.ssim.toFixed(3);
+    document.getElementById('mediumLpips').textContent = medium.lpips.toFixed(4);
+    document.getElementById('mediumCf').textContent = medium.cf.toFixed(1);
+  }
+
+  const hard = breakdown.hard || defaultPerformanceSummary.breakdown.hard;
+  if (hard) {
+    document.getElementById('hardPsnr').textContent = hard.psnr.toFixed(2);
+    document.getElementById('hardSsim').textContent = hard.ssim.toFixed(3);
+    document.getElementById('hardLpips').textContent = hard.lpips.toFixed(4);
+    document.getElementById('hardCf').textContent = hard.cf.toFixed(1);
+  }
+
+  // Comparison section population & automated computation
+  const comp = data.comparison;
+  if (comp && comp.metrics) {
+    const metricsConfig = [
+      { key: 'psnr', oursId: 'compPsnrOurs', baseId: 'compPsnrBase', deltaOursId: 'compPsnrDeltaOurs', deltaBaseId: 'compPsnrDeltaBase' },
+      { key: 'ssim', oursId: 'compSsimOurs', baseId: 'compSsimBase', deltaOursId: 'compSsimDeltaOurs', deltaBaseId: 'compSsimDeltaBase' },
+      { key: 'lpips', oursId: 'compLpipsOurs', baseId: 'compLpipsBase', deltaOursId: 'compLpipsDeltaOurs', deltaBaseId: 'compLpipsDeltaBase' },
+      { key: 'cf', oursId: 'compCfOurs', baseId: 'compCfBase', deltaOursId: 'compCfDeltaOurs', deltaBaseId: 'compCfDeltaBase' }
+    ];
+
+    let candidateWins = 0;
+    let baselineWins = 0;
+    let totalCount = 0;
+
+    metricsConfig.forEach(cfg => {
+      const m = comp.metrics[cfg.key];
+      if (!m) return;
+      totalCount++;
+
+      const candVal = Number(m.candidate);
+      const baseVal = Number(m.baseline);
+      const higherIsBetter = m.higherIsBetter !== false;
+      const precision = typeof m.precision === 'number' ? m.precision : 2;
+      const unit = m.unit || '';
+
+      // Set raw displayed values
+      const oursEl = document.getElementById(cfg.oursId);
+      const baseEl = document.getElementById(cfg.baseId);
+      if (oursEl) oursEl.textContent = candVal.toFixed(precision);
+      if (baseEl) baseEl.textContent = baseVal.toFixed(precision);
+
+      // Automated Win calculation
+      const candWins = higherIsBetter ? (candVal > baseVal) : (candVal < baseVal);
+      const baseWins = higherIsBetter ? (baseVal > candVal) : (baseVal < candVal);
+
+      if (candWins) candidateWins++;
+      if (baseWins) baselineWins++;
+
+      // Automated Delta computation
+      const candDiff = candVal - baseVal;
+      const baseDiff = baseVal - candVal;
+
+      const formatDelta = (diff) => {
+        const sign = diff > 0 ? '+' : (diff < 0 ? '−' : '');
+        return `${sign}${Math.abs(diff).toFixed(precision)}${unit}`;
+      };
+
+      const deltaOursEl = document.getElementById(cfg.deltaOursId);
+      if (deltaOursEl) {
+        deltaOursEl.textContent = formatDelta(candDiff);
+        deltaOursEl.classList.toggle('text-success-text', candWins);
+        deltaOursEl.classList.toggle('text-danger-text', !candWins);
+      }
+
+      const deltaBaseEl = document.getElementById(cfg.deltaBaseId);
+      if (deltaBaseEl) {
+        deltaBaseEl.textContent = formatDelta(baseDiff);
+        deltaBaseEl.classList.toggle('text-success-text', baseWins);
+        deltaBaseEl.classList.toggle('text-danger-text', !baseWins);
+      }
+    });
+
+    // Automated summary counts
+    const cWinsEl = document.getElementById('compCandidateWins');
+    const bWinsEl = document.getElementById('compBaselineWins');
+    if (cWinsEl) cWinsEl.textContent = `${candidateWins} / ${totalCount}`;
+    if (bWinsEl) bWinsEl.textContent = `${baselineWins} / ${totalCount}`;
+  }
 }
 
 // ── GALLERY TABS ──
