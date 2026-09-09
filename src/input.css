@@ -60,6 +60,11 @@
 
 * { box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-lavender-bg);
@@ -311,8 +316,8 @@ h4, h5, h6 {
 
 /* ── Dashboard card ── */
 .dashboard-card {
-  @apply bg-card-bg border border-border rounded-2xl p-7 sm:p-8 transition-colors duration-150;
-  min-height: 175px;
+  @apply bg-card-bg border border-border rounded-2xl p-6 sm:p-7 transition-colors duration-150;
+  min-height: 160px;
 }
 
 .dashboard-card:hover {

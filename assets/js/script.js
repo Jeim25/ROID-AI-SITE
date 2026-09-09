@@ -143,6 +143,44 @@ function populatePerformanceMetrics() {
   document.getElementById('hardCf').textContent = summary.hard.cf.toFixed(1);
 }
 
+// ── GALLERY TABS ──
+let currentGallerySet = 1;
+function switchGalleryTab(setNum) {
+  currentGallerySet = setNum;
+  const tabs = document.querySelectorAll('.gallery-tab');
+  const panels = document.querySelectorAll('.gallery-panel');
+  const numEl = document.getElementById('currentSetNum');
+  if (numEl) numEl.textContent = setNum;
+  
+  tabs.forEach((tab, i) => {
+    if (i + 1 === setNum) {
+      tab.classList.add('bg-purple-600', 'text-white');
+      tab.classList.remove('bg-lavender-bg', 'text-text-secondary', 'border-border');
+    } else {
+      tab.classList.remove('bg-purple-600', 'text-white');
+      tab.classList.add('bg-lavender-bg', 'text-text-secondary', 'border-border');
+    }
+  });
+
+  panels.forEach((panel, i) => {
+    if (i + 1 === setNum) {
+      panel.classList.remove('hidden');
+    } else {
+      panel.classList.add('hidden');
+    }
+  });
+}
+
+function nextGallerySet() {
+  const next = currentGallerySet >= 3 ? 1 : currentGallerySet + 1;
+  switchGalleryTab(next);
+}
+
+function prevGallerySet() {
+  const prev = currentGallerySet <= 1 ? 3 : currentGallerySet - 1;
+  switchGalleryTab(prev);
+}
+
 // ── SMOOTH SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

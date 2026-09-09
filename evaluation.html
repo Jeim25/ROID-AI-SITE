@@ -1,113 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROID-AI Performance Metrics — ATD12k Study</title>
   <link rel="stylesheet" href="dist/output.css" />
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav class="sticky top-0 z-50 bg-lavender-bg/90 backdrop-blur-xl border-b border-border py-4">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-      <a class="font-bold text-2xl text-purple-600 tracking-tight no-underline" href="index.html">ROID<span class="text-purple-400">-AI</span></a>
+      <a class="font-bold text-2xl text-purple-600 tracking-tight no-underline" href="index.html">ROID<span
+          class="text-purple-400">-AI</span></a>
 
       <!-- Mobile hamburger -->
-      <button id="navToggle" class="lg:hidden border border-border rounded-lg p-2 cursor-pointer bg-transparent" type="button" aria-label="Toggle menu">
+      <button id="navToggle" class="lg:hidden border border-border rounded-lg p-2 cursor-pointer bg-transparent"
+        type="button" aria-label="Toggle menu">
         <svg class="w-6 h-6 stroke-text-secondary" viewBox="0 0 24 24" fill="none" stroke-width="2">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
 
       <!-- Desktop nav -->
       <div class="hidden lg:flex items-center gap-2">
-        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50" href="index.html">Home</a>
-        <a class="text-base font-semibold text-purple-600 bg-purple-50 px-4 py-2 rounded-xl no-underline transition-colors duration-150" href="evaluation.html">Performance Metrics</a>
-        <a href="index.html" class="ml-3 bg-purple-600 text-white text-base font-semibold px-5 py-2 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Back to landing</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html">Home</a>
+        <a class="text-base font-semibold text-purple-600 bg-purple-50 px-4 py-2 rounded-xl no-underline transition-colors duration-150"
+          href="evaluation.html">Performance Metrics</a>
+        <a href="index.html"
+          class="ml-3 bg-purple-600 text-white text-base font-semibold px-5 py-2 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Back
+          to landing</a>
       </div>
     </div>
 
     <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-6 pt-4 pb-2 flex flex-col gap-1.5">
-      <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50" href="index.html">Home</a>
-      <a class="text-base font-semibold text-purple-600 bg-purple-50 px-4 py-2.5 rounded-lg no-underline" href="evaluation.html">Performance Metrics</a>
-      <a href="index.html" class="mt-2 bg-purple-600 text-white text-base font-semibold text-center px-5 py-3 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Back to landing</a>
+      <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+        href="index.html">Home</a>
+      <a class="text-base font-semibold text-purple-600 bg-purple-50 px-4 py-2.5 rounded-lg no-underline"
+        href="evaluation.html">Performance Metrics</a>
+      <a href="index.html"
+        class="mt-2 bg-purple-600 text-white text-base font-semibold text-center px-5 py-3 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Back
+        to landing</a>
     </div>
   </nav>
 
-  <!-- DASHBOARD -->
-  <section class="py-20 lg:py-24" id="evaluation">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="section-heading">
+  <!-- DASHBOARD (LAVENDER DOT-GRID BG) -->
+  <section
+    class="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-12 lg:py-16 bg-lavender-bg bg-dot-grid border-b border-border scroll-mt-20"
+    id="evaluation">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="section-heading mb-8 lg:mb-10">
         <h2>Model Performance</h2>
-        <p>Summary of the model's performance on the <span class="spec-mono">2,000</span> testing triplets of the ATD-12k dataset, reported from our study.</p>
-      </div>
-
-      <!-- Intro panel -->
-      <div class="card-base rounded-3xl p-7 lg:p-9 mb-10 max-w-5xl mx-auto">
-        <p class="text-base lg:text-lg text-text-secondary leading-relaxed">These values are taken from the completed ATD12k evaluation study and reflect the model's observed performance across easy, medium, and hard difficulty groups.</p>
+        <p>Observed performance across easy, medium, and hard difficulty groups on the <span
+            class="spec-mono font-medium">2,000</span> test triplets of the ATD-12k dataset.</p>
       </div>
 
       <!-- Overall stat cards -->
-      <div class="grid grid-cols-2 xl:grid-cols-4 gap-6 max-w-5xl mx-auto" id="overallStats">
-        <article class="dashboard-card">
-          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">PSNR</span>
-          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="psnrMean">—</strong>
+      <div class="grid grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto mb-8 lg:mb-10" id="overallStats">
+        <article class="dashboard-card bg-card-bg">
+          <span
+            class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">PSNR</span>
+          <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
+            id="psnrMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="psnrSd">SD —</span>
         </article>
-        <article class="dashboard-card">
-          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">SSIM</span>
-          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="ssimMean">—</strong>
+        <article class="dashboard-card bg-card-bg">
+          <span
+            class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">SSIM</span>
+          <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
+            id="ssimMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="ssimSd">SD —</span>
         </article>
-        <article class="dashboard-card">
-          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">LPIPS</span>
-          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="lpipsMean">—</strong>
+        <article class="dashboard-card bg-card-bg">
+          <span
+            class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">LPIPS</span>
+          <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
+            id="lpipsMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="lpipsSd">SD —</span>
         </article>
-        <article class="dashboard-card">
-          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">Chamfer Dist.</span>
-          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="cfMean">—</strong>
+        <article class="dashboard-card bg-card-bg">
+          <span
+            class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">Chamfer
+            Distance</span>
+          <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
+            id="cfMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="cfSd">SD —</span>
         </article>
       </div>
 
       <!-- Category breakdown table -->
-      <div class="mt-16 text-center max-w-5xl mx-auto">
-        <h3 class="font-display text-2xl lg:text-3xl font-bold text-text-primary mb-8">Easy / Medium / Hard Comparison</h3>
-        <div class="overflow-x-auto card-base rounded-2xl p-2 sm:p-4">
+      <div class="text-center max-w-6xl mx-auto">
+        <h3 class="font-display text-xl lg:text-2xl font-bold text-text-primary mb-4">Easy / Medium / Hard Breakdown
+        </h3>
+        <div class="overflow-x-auto card-base rounded-2xl p-2 sm:p-3 bg-card-bg">
           <table class="w-full border-collapse">
             <thead>
               <tr class="border-b border-border">
-                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary">Category</th>
-                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">PSNR</th>
-                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">SSIM</th>
-                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">LPIPS</th>
-                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">Chamfer Dist.</th>
+                <th
+                  class="text-center py-3.5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary">
+                  Category</th>
+                <th
+                  class="text-center py-3.5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">
+                  PSNR</th>
+                <th
+                  class="text-center py-3.5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">
+                  SSIM</th>
+                <th
+                  class="text-center py-3.5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">
+                  LPIPS</th>
+                <th
+                  class="text-center py-3.5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">
+                  Chamfer Distance</th>
               </tr>
             </thead>
             <tbody>
               <tr class="border-b border-border/50 transition-colors duration-150 hover:bg-purple-50/50">
-                <td class="py-5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Easy</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyPsnr">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easySsim">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyLpips">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyCf">—</td>
+                <td class="py-3.5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Easy</td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyPsnr">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easySsim">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyLpips">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyCf">—</td>
               </tr>
               <tr class="border-b border-border/50 transition-colors duration-150 hover:bg-purple-50/50">
-                <td class="py-5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Medium</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumPsnr">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumSsim">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumLpips">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumCf">—</td>
+                <td class="py-3.5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Medium</td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumPsnr">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumSsim">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumLpips">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumCf">—
+                </td>
               </tr>
               <tr class="transition-colors duration-150 hover:bg-purple-50/50">
-                <td class="py-5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Hard</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardPsnr">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardSsim">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardLpips">—</td>
-                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardCf">—</td>
+                <td class="py-3.5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Hard</td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardPsnr">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardSsim">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardLpips">—
+                </td>
+                <td class="py-3.5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardCf">—</td>
               </tr>
             </tbody>
           </table>
@@ -116,8 +158,8 @@
     </div>
   </section>
 
-  <!-- COMPARISON -->
-  <section class="pb-24 pt-4" id="comparison">
+  <!-- COMPARISON (WHITE BG) -->
+  <section class="py-20 lg:py-28 bg-white border-b border-border scroll-mt-20" id="comparison">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="section-heading">
         <h2>ROID-AI vs. AnimeInterp</h2>
@@ -128,9 +170,12 @@
       <div class="max-w-4xl mx-auto">
         <!-- Header labels -->
         <div class="grid grid-cols-[1fr_180px_1fr] gap-0 mb-6 px-6 items-center">
-          <span class="text-sm sm:text-base font-bold tracking-wider uppercase text-purple-600 text-left">ROID-AI (Ours)</span>
-          <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted text-center">Metric</span>
-          <span class="text-sm sm:text-base font-bold tracking-wider uppercase text-purple-600 text-right">AnimeInterp</span>
+          <span class="text-sm sm:text-base font-bold tracking-wider uppercase text-purple-600 text-left">ROID-AI
+            (Ours)</span>
+          <span
+            class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted text-center">Metric</span>
+          <span
+            class="text-sm sm:text-base font-bold tracking-wider uppercase text-purple-600 text-right">AnimeInterp</span>
         </div>
 
         <!-- PSNR -->
@@ -188,7 +233,8 @@
             <span class="text-xs sm:text-sm font-semibold text-success-text spec-mono mt-1">−0.484</span>
           </div>
           <div class="text-center flex flex-col items-center">
-            <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-purple-600 spec-mono">Chamfer Dist.</span>
+            <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-purple-600 spec-mono">Chamfer
+              Dist.</span>
             <span class="text-xs text-text-muted mt-0.5">↓ lower is better</span>
           </div>
           <div class="flex flex-col items-end">
@@ -205,7 +251,8 @@
           </div>
           <div class="w-px h-12 bg-border"></div>
           <div class="flex flex-col items-center gap-1.5">
-            <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted">AnimeInterp wins</span>
+            <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted">AnimeInterp
+              wins</span>
             <span class="text-2xl sm:text-3xl font-bold text-purple-600 spec-mono">3 / 4</span>
           </div>
         </div>
@@ -219,24 +266,33 @@
       <div class="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8">
         <div class="col-span-2 md:col-span-1">
           <div class="font-bold text-2xl text-white mb-2">ROID-AI</div>
-          <div class="text-base text-white/45 leading-relaxed">ROI-Guided Deformable Convolutions<br>for Automated Anime In-Betweening</div>
+          <div class="text-base text-white/45 leading-relaxed">ROI-Guided Deformable Convolutions<br>for Automated Anime
+            In-Betweening</div>
         </div>
         <div>
           <div class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Tool</div>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html">Home</a>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#gallery">Gallery</a>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#how-it-works">How it works</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html">Home</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#gallery">Gallery</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#how-it-works">How it works</a>
         </div>
         <div>
           <div class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Support</div>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#scope">Scope &amp; Limits</a>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#faq">FAQ</a>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html">Contact</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#scope">Scope &amp; Limits</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#faq">FAQ</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html">Contact</a>
         </div>
         <div>
           <div class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Legal</div>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="#">Privacy Policy</a>
-          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="#">Terms of Use</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="#">Privacy Policy</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="#">Terms of Use</a>
         </div>
       </div>
       <hr class="border-white/8 my-10" />
@@ -246,4 +302,5 @@
 
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
