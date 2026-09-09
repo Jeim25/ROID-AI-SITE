@@ -432,8 +432,8 @@ function renderTeamCard(member) {
   }
 
   const contributionsHtml = (member.contributions || []).map(item => `
-    <div class="flex items-start gap-2 text-xs sm:text-sm text-text-secondary">
-      <span class="status-dot bg-purple-600 mt-1.5"></span>
+    <div class="flex items-start gap-2 text-xs sm:text-sm text-text-secondary text-justify">
+      <span class="status-dot bg-purple-600 mt-1.5 shrink-0"></span>
       <span>${item}</span>
     </div>
   `).join('');
@@ -460,7 +460,7 @@ function renderTeamCard(member) {
           <h3 class="text-xl sm:text-2xl font-bold text-text-primary mb-1">${member.name || ''}</h3>
           <p class="text-sm font-semibold text-purple-600 mb-3">${member.role || ''}</p>
 
-          <p class="text-sm text-text-secondary leading-relaxed mb-4">
+          <p class="text-sm text-text-secondary leading-relaxed mb-4 text-justify">
             ${member.bio || ''}
           </p>
 
