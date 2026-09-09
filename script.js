@@ -114,6 +114,8 @@ const performanceSummary = {
 };
 
 function populatePerformanceMetrics() {
+  const psnrEl = document.getElementById('psnrMean');
+  if (!psnrEl) return;
   const summary = performanceSummary;
 
   document.getElementById('psnrMean').textContent = summary.overall.psnr.mean.toFixed(2);
