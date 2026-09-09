@@ -5,108 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROID-AI Performance Metrics — ATD12k Study</title>
   <link rel="stylesheet" href="dist/output.css" />
-</head><body>
+</head>
+<body>
 
   <!-- NAVBAR -->
-  <nav class="sticky top-0 z-50 bg-lavender-bg/90 backdrop-blur-xl border-b border-border py-3">
-    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
-      <a class="font-display font-bold text-xl text-purple-600 tracking-tight no-underline" href="index.html">ROID<span class="text-purple-400">-AI</span></a>
+  <nav class="sticky top-0 z-50 bg-lavender-bg/90 backdrop-blur-xl border-b border-border py-4">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+      <a class="font-bold text-2xl text-purple-600 tracking-tight no-underline" href="index.html">ROID<span class="text-purple-400">-AI</span></a>
 
       <!-- Mobile hamburger -->
-      <button id="navToggle" class="lg:hidden border border-border rounded-lg p-1.5 cursor-pointer bg-transparent" type="button" aria-label="Toggle menu">
-        <svg class="w-5 h-5 stroke-text-secondary" viewBox="0 0 24 24" fill="none" stroke-width="2">
+      <button id="navToggle" class="lg:hidden border border-border rounded-lg p-2 cursor-pointer bg-transparent" type="button" aria-label="Toggle menu">
+        <svg class="w-6 h-6 stroke-text-secondary" viewBox="0 0 24 24" fill="none" stroke-width="2">
           <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
 
       <!-- Desktop nav -->
-      <div class="hidden lg:flex items-center gap-1">
-        <a class="text-sm font-semibold text-text-secondary px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="index.html">Home</a>
-        <a class="text-sm font-semibold text-purple-600 bg-purple-50 px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200" href="evaluation.html">Performance Metrics</a>
-        <a href="index.html" class="ml-2 bg-purple-600 text-white text-sm font-semibold px-4 py-1.5 rounded-xl no-underline transition-all duration-200 hover:bg-purple-800 hover:-translate-y-px">Back to landing</a>
+      <div class="hidden lg:flex items-center gap-2">
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50" href="index.html">Home</a>
+        <a class="text-base font-semibold text-purple-600 bg-purple-50 px-4 py-2 rounded-xl no-underline transition-colors duration-150" href="evaluation.html">Performance Metrics</a>
+        <a href="index.html" class="ml-3 bg-purple-600 text-white text-base font-semibold px-5 py-2 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Back to landing</a>
       </div>
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto px-6 pt-4 pb-2 flex flex-col gap-1">
-      <a class="text-sm font-semibold text-text-secondary px-3.5 py-2 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="index.html">Home</a>
-      <a class="text-sm font-semibold text-purple-600 bg-purple-50 px-3.5 py-2 rounded-lg no-underline" href="evaluation.html">Performance Metrics</a>
-      <a href="index.html" class="mt-2 bg-purple-600 text-white text-sm font-semibold text-center px-4 py-2.5 rounded-xl no-underline transition-all duration-200 hover:bg-purple-800">Back to landing</a>
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-6 pt-4 pb-2 flex flex-col gap-1.5">
+      <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50" href="index.html">Home</a>
+      <a class="text-base font-semibold text-purple-600 bg-purple-50 px-4 py-2.5 rounded-lg no-underline" href="evaluation.html">Performance Metrics</a>
+      <a href="index.html" class="mt-2 bg-purple-600 text-white text-base font-semibold text-center px-5 py-3 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Back to landing</a>
     </div>
   </nav>
 
   <!-- DASHBOARD -->
-  <section class="py-16" id="evaluation">
-    <div class="max-w-6xl mx-auto px-6">
+  <section class="py-20 lg:py-24" id="evaluation">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="section-heading">
         <h2>Model Performance</h2>
         <p>Summary of the model's performance on the <span class="spec-mono">2,000</span> testing triplets of the ATD-12k dataset, reported from our study.</p>
       </div>
 
       <!-- Intro panel -->
-      <div class="card-base rounded-3xl p-6 md:p-7 mb-8">
-        <p class="text-sm text-text-secondary leading-relaxed">These values are taken from the completed ATD12k evaluation study and reflect the model's observed performance across easy, medium, and hard difficulty groups.</p>
+      <div class="card-base rounded-3xl p-7 lg:p-9 mb-10 max-w-5xl mx-auto">
+        <p class="text-base lg:text-lg text-text-secondary leading-relaxed">These values are taken from the completed ATD12k evaluation study and reflect the model's observed performance across easy, medium, and hard difficulty groups.</p>
       </div>
 
       <!-- Overall stat cards -->
-      <div class="grid grid-cols-2 xl:grid-cols-4 gap-4" id="overallStats">
+      <div class="grid grid-cols-2 xl:grid-cols-4 gap-6 max-w-5xl mx-auto" id="overallStats">
         <article class="dashboard-card">
-          <span class="block text-xs font-bold tracking-widest uppercase text-purple-600 mb-3 spec-mono">PSNR</span>
-          <strong class="block text-2xl font-bold text-text-primary mb-1 spec-mono" id="psnrMean">—</strong>
-          <span class="text-sm text-text-secondary spec-mono" id="psnrSd">SD —</span>
+          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">PSNR</span>
+          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="psnrMean">—</strong>
+          <span class="text-sm lg:text-base text-text-secondary spec-mono" id="psnrSd">SD —</span>
         </article>
         <article class="dashboard-card">
-          <span class="block text-xs font-bold tracking-widest uppercase text-purple-600 mb-3 spec-mono">SSIM</span>
-          <strong class="block text-2xl font-bold text-text-primary mb-1 spec-mono" id="ssimMean">—</strong>
-          <span class="text-sm text-text-secondary spec-mono" id="ssimSd">SD —</span>
+          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">SSIM</span>
+          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="ssimMean">—</strong>
+          <span class="text-sm lg:text-base text-text-secondary spec-mono" id="ssimSd">SD —</span>
         </article>
         <article class="dashboard-card">
-          <span class="block text-xs font-bold tracking-widest uppercase text-purple-600 mb-3 spec-mono">LPIPS</span>
-          <strong class="block text-2xl font-bold text-text-primary mb-1 spec-mono" id="lpipsMean">—</strong>
-          <span class="text-sm text-text-secondary spec-mono" id="lpipsSd">SD —</span>
+          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">LPIPS</span>
+          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="lpipsMean">—</strong>
+          <span class="text-sm lg:text-base text-text-secondary spec-mono" id="lpipsSd">SD —</span>
         </article>
         <article class="dashboard-card">
-          <span class="block text-xs font-bold tracking-widest uppercase text-purple-600 mb-3 spec-mono">Chamfer Dist.</span>
-          <strong class="block text-2xl font-bold text-text-primary mb-1 spec-mono" id="cfMean">—</strong>
-          <span class="text-sm text-text-secondary spec-mono" id="cfSd">SD —</span>
+          <span class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-3 spec-mono">Chamfer Dist.</span>
+          <strong class="block text-3xl lg:text-4xl font-bold text-text-primary mb-1 spec-mono" id="cfMean">—</strong>
+          <span class="text-sm lg:text-base text-text-secondary spec-mono" id="cfSd">SD —</span>
         </article>
       </div>
 
       <!-- Category breakdown table -->
-      <div class="mt-12 text-center">
-        <h3 class="font-display text-xl font-bold text-text-primary mb-6">Easy / Medium / Hard Comparison</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full border-collapse rounded-2xl overflow-hidden">
+      <div class="mt-16 text-center max-w-5xl mx-auto">
+        <h3 class="font-display text-2xl lg:text-3xl font-bold text-text-primary mb-8">Easy / Medium / Hard Comparison</h3>
+        <div class="overflow-x-auto card-base rounded-2xl p-2 sm:p-4">
+          <table class="w-full border-collapse">
             <thead>
               <tr class="border-b border-border">
-                <th class="text-center py-4 px-4 text-xs font-bold tracking-widest uppercase text-text-secondary">Category</th>
-                <th class="text-center py-4 px-4 text-xs font-bold tracking-widest uppercase text-text-secondary spec-mono">PSNR</th>
-                <th class="text-center py-4 px-4 text-xs font-bold tracking-widest uppercase text-text-secondary spec-mono">SSIM</th>
-                <th class="text-center py-4 px-4 text-xs font-bold tracking-widest uppercase text-text-secondary spec-mono">LPIPS</th>
-                <th class="text-center py-4 px-4 text-xs font-bold tracking-widest uppercase text-text-secondary spec-mono">Chamfer Dist.</th>
+                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary">Category</th>
+                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">PSNR</th>
+                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">SSIM</th>
+                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">LPIPS</th>
+                <th class="text-center py-5 px-6 text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-secondary spec-mono">Chamfer Dist.</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-border/50 transition-colors duration-200 hover:bg-purple-50/50">
-                <td class="py-4 px-4 text-sm font-semibold text-text-primary text-center">Easy</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="easyPsnr">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="easySsim">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="easyLpips">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="easyCf">—</td>
+              <tr class="border-b border-border/50 transition-colors duration-150 hover:bg-purple-50/50">
+                <td class="py-5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Easy</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyPsnr">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easySsim">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyLpips">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="easyCf">—</td>
               </tr>
-              <tr class="border-b border-border/50 transition-colors duration-200 hover:bg-purple-50/50">
-                <td class="py-4 px-4 text-sm font-semibold text-text-primary text-center">Medium</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="mediumPsnr">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="mediumSsim">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="mediumLpips">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="mediumCf">—</td>
+              <tr class="border-b border-border/50 transition-colors duration-150 hover:bg-purple-50/50">
+                <td class="py-5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Medium</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumPsnr">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumSsim">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumLpips">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="mediumCf">—</td>
               </tr>
-              <tr class="transition-colors duration-200 hover:bg-purple-50/50">
-                <td class="py-4 px-4 text-sm font-semibold text-text-primary text-center">Hard</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="hardPsnr">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="hardSsim">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="hardLpips">—</td>
-                <td class="py-4 px-4 text-sm text-text-primary text-center spec-mono" id="hardCf">—</td>
+              <tr class="transition-colors duration-150 hover:bg-purple-50/50">
+                <td class="py-5 px-6 text-base sm:text-lg font-semibold text-text-primary text-center">Hard</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardPsnr">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardSsim">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardLpips">—</td>
+                <td class="py-5 px-6 text-base sm:text-lg text-text-primary text-center spec-mono" id="hardCf">—</td>
               </tr>
             </tbody>
           </table>
@@ -116,131 +117,130 @@
   </section>
 
   <!-- COMPARISON -->
-  <section class="pb-16 pt-4" id="comparison">
-    <div class="max-w-6xl mx-auto px-6">
+  <section class="pb-24 pt-4" id="comparison">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="section-heading">
         <h2>ROID-AI vs. AnimeInterp</h2>
         <p>Overall means compared against the AnimeInterp baseline on the ATD-12k test set.</p>
       </div>
 
-      <!-- Header labels -->
-      <div class="grid grid-cols-[1fr_160px_1fr] gap-0 mb-5 px-1 items-center">
-        <span class="text-xs font-bold tracking-widest uppercase text-purple-600 text-left">ROID-AI (Ours)</span>
-        <span class="text-xs font-bold tracking-widest uppercase text-text-muted text-center">Metric</span>
-        <span class="text-xs font-bold tracking-widest uppercase text-purple-600 text-right">AnimeInterp</span>
-      </div>
+      <!-- Comparison container -->
+      <div class="max-w-4xl mx-auto">
+        <!-- Header labels -->
+        <div class="grid grid-cols-[1fr_180px_1fr] gap-0 mb-6 px-6 items-center">
+          <span class="text-sm sm:text-base font-bold tracking-wider uppercase text-purple-600 text-left">ROID-AI (Ours)</span>
+          <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted text-center">Metric</span>
+          <span class="text-sm sm:text-base font-bold tracking-wider uppercase text-purple-600 text-right">AnimeInterp</span>
+        </div>
 
-      <!-- PSNR -->
-      <div class="comparison-row">
-        <div class="flex flex-col gap-1.5 items-start">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">29.25</span>
-          <span class="badge-danger"><span class="status-dot bg-danger-dot"></span>−0.43 dB worse</span>
+        <!-- PSNR -->
+        <div class="comparison-row">
+          <div class="flex flex-col items-start">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">29.25</span>
+            <span class="text-xs sm:text-sm font-semibold text-danger-text spec-mono mt-1">−0.43 dB</span>
+          </div>
+          <div class="text-center flex flex-col items-center">
+            <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-purple-600 spec-mono">PSNR</span>
+            <span class="text-xs text-text-muted mt-0.5">↑ higher is better</span>
+          </div>
+          <div class="flex flex-col items-end">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">29.68</span>
+            <span class="text-xs sm:text-sm font-semibold text-success-text spec-mono mt-1">+0.43 dB</span>
+          </div>
         </div>
-        <div class="text-center flex flex-col items-center gap-1">
-          <span class="text-xs font-bold tracking-widest uppercase text-purple-400 spec-mono">PSNR</span>
-          <span class="text-xs text-text-muted">↑ higher is better</span>
-          <span class="badge-purple spec-mono">Δ 0.43 dB</span>
-        </div>
-        <div class="flex flex-col gap-1.5 items-end">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">29.68</span>
-          <span class="badge-success"><span class="status-dot bg-success-dot"></span>+0.43 dB better</span>
-        </div>
-      </div>
 
-      <!-- SSIM -->
-      <div class="comparison-row">
-        <div class="flex flex-col gap-1.5 items-start">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">0.950</span>
-          <span class="badge-danger"><span class="status-dot bg-danger-dot"></span>−0.008 worse</span>
+        <!-- SSIM -->
+        <div class="comparison-row">
+          <div class="flex flex-col items-start">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">0.950</span>
+            <span class="text-xs sm:text-sm font-semibold text-danger-text spec-mono mt-1">−0.008</span>
+          </div>
+          <div class="text-center flex flex-col items-center">
+            <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-purple-600 spec-mono">SSIM</span>
+            <span class="text-xs text-text-muted mt-0.5">↑ higher is better</span>
+          </div>
+          <div class="flex flex-col items-end">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">0.958</span>
+            <span class="text-xs sm:text-sm font-semibold text-success-text spec-mono mt-1">+0.008</span>
+          </div>
         </div>
-        <div class="text-center flex flex-col items-center gap-1">
-          <span class="text-xs font-bold tracking-widest uppercase text-purple-400 spec-mono">SSIM</span>
-          <span class="text-xs text-text-muted">↑ higher is better</span>
-          <span class="badge-purple spec-mono">Δ 0.008</span>
-        </div>
-        <div class="flex flex-col gap-1.5 items-end">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">0.958</span>
-          <span class="badge-success"><span class="status-dot bg-success-dot"></span>+0.008 better</span>
-        </div>
-      </div>
 
-      <!-- LPIPS -->
-      <div class="comparison-row">
-        <div class="flex flex-col gap-1.5 items-start">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">6.32</span>
-          <span class="badge-danger"><span class="status-dot bg-danger-dot"></span>+1.261 worse</span>
+        <!-- LPIPS -->
+        <div class="comparison-row">
+          <div class="flex flex-col items-start">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">6.32</span>
+            <span class="text-xs sm:text-sm font-semibold text-danger-text spec-mono mt-1">+1.261</span>
+          </div>
+          <div class="text-center flex flex-col items-center">
+            <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-purple-600 spec-mono">LPIPS</span>
+            <span class="text-xs text-text-muted mt-0.5">↓ lower is better</span>
+          </div>
+          <div class="flex flex-col items-end">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">5.059</span>
+            <span class="text-xs sm:text-sm font-semibold text-success-text spec-mono mt-1">−1.261</span>
+          </div>
         </div>
-        <div class="text-center flex flex-col items-center gap-1">
-          <span class="text-xs font-bold tracking-widest uppercase text-purple-400 spec-mono">LPIPS</span>
-          <span class="text-xs text-text-muted">↓ lower is better</span>
-          <span class="badge-purple spec-mono">Δ 1.261</span>
-        </div>
-        <div class="flex flex-col gap-1.5 items-end">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">5.059</span>
-          <span class="badge-success"><span class="status-dot bg-success-dot"></span>−1.261 better</span>
-        </div>
-      </div>
 
-      <!-- Chamfer Distance -->
-      <div class="comparison-row">
-        <div class="flex flex-col gap-1.5 items-start">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">5.08</span>
-          <span class="badge-success"><span class="status-dot bg-success-dot"></span>−0.484 better</span>
+        <!-- Chamfer Distance -->
+        <div class="comparison-row">
+          <div class="flex flex-col items-start">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">5.08</span>
+            <span class="text-xs sm:text-sm font-semibold text-success-text spec-mono mt-1">−0.484</span>
+          </div>
+          <div class="text-center flex flex-col items-center">
+            <span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-purple-600 spec-mono">Chamfer Dist.</span>
+            <span class="text-xs text-text-muted mt-0.5">↓ lower is better</span>
+          </div>
+          <div class="flex flex-col items-end">
+            <span class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary spec-mono">5.564</span>
+            <span class="text-xs font-semibold text-danger-text spec-mono mt-1">+0.484</span>
+          </div>
         </div>
-        <div class="text-center flex flex-col items-center gap-1">
-          <span class="text-xs font-bold tracking-widest uppercase text-purple-400 spec-mono">Chamfer Dist.</span>
-          <span class="text-xs text-text-muted">↓ lower is better</span>
-          <span class="badge-purple spec-mono">Δ 0.484</span>
-        </div>
-        <div class="flex flex-col gap-1.5 items-end">
-          <span class="text-2xl font-bold tracking-tight text-text-primary font-display spec-mono">5.564</span>
-          <span class="badge-danger"><span class="status-dot bg-danger-dot"></span>+0.484 worse</span>
-        </div>
-      </div>
 
-      <!-- Summary strip -->
-      <div class="flex items-center justify-center gap-8 mt-8 p-5 card-base rounded-2xl flex-wrap">
-        <div class="flex flex-col items-center gap-1">
-          <span class="text-xs font-semibold tracking-widest uppercase text-text-muted">ROID-AI wins</span>
-          <span class="text-xl font-bold font-display text-success-text spec-mono">1 / 4</span>
-        </div>
-        <div class="w-px h-10 bg-border"></div>
-        <div class="flex flex-col items-center gap-1">
-          <span class="text-xs font-semibold tracking-widest uppercase text-text-muted">AnimeInterp wins</span>
-          <span class="text-xl font-bold font-display text-purple-600 spec-mono">3 / 4</span>
+        <!-- Summary strip -->
+        <div class="flex items-center justify-center gap-10 mt-10 p-6 sm:p-7 card-base rounded-2xl flex-wrap">
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted">ROID-AI wins</span>
+            <span class="text-2xl sm:text-3xl font-bold text-success-text spec-mono">1 / 4</span>
+          </div>
+          <div class="w-px h-12 bg-border"></div>
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted">AnimeInterp wins</span>
+            <span class="text-2xl sm:text-3xl font-bold text-purple-600 spec-mono">3 / 4</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-purple-900 pt-14 pb-8">
-    <div class="max-w-6xl mx-auto px-6">
+  <footer class="bg-purple-900 pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8">
         <div class="col-span-2 md:col-span-1">
-          <div class="font-display font-bold text-xl text-white mb-1.5">ROID-AI</div>
-          <div class="text-sm text-white/45 leading-relaxed">ROI-Guided Deformable Convolutions<br>for Automated Anime In-Betweening</div>
+          <div class="font-bold text-2xl text-white mb-2">ROID-AI</div>
+          <div class="text-base text-white/45 leading-relaxed">ROI-Guided Deformable Convolutions<br>for Automated Anime In-Betweening</div>
         </div>
         <div>
-          <div class="font-display text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Tool</div>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="index.html">Home</a>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="index.html#gallery">Gallery</a>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="index.html#how-it-works">How it works</a>
+          <div class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Tool</div>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html">Home</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#gallery">Gallery</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#how-it-works">How it works</a>
         </div>
         <div>
-          <div class="font-display text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Support</div>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="index.html#scope">Scope &amp; Limits</a>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="index.html#faq">FAQ</a>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="index.html">Contact</a>
+          <div class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Support</div>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#scope">Scope &amp; Limits</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html#faq">FAQ</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="index.html">Contact</a>
         </div>
         <div>
-          <div class="font-display text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Legal</div>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#">Privacy Policy</a>
-          <a class="block text-sm text-white/65 no-underline mb-2 transition-colors duration-200 hover:text-white" href="#">Terms of Use</a>
+          <div class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Legal</div>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="#">Privacy Policy</a>
+          <a class="block text-base text-white/65 no-underline mb-2.5 transition-colors duration-150 hover:text-white" href="#">Terms of Use</a>
         </div>
       </div>
       <hr class="border-white/8 my-10" />
-      <p class="text-xs text-white/30">© 2025 ROID-AI. All rights reserved. Built for anime production studios.</p>
+      <p class="text-sm text-white/30">© 2025 ROID-AI. All rights reserved. Built for anime production studios.</p>
     </div>
   </footer>
 

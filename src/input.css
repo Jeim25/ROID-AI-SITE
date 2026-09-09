@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════
@@ -7,7 +7,7 @@
 
 @theme {
   /* ── Font families ── */
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Onest', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -73,11 +73,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Onest strictly for h1, h2, h3 per Issue 4 */
+h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 /* ══════════════════════════════════════════════
@@ -90,87 +98,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* ══════════════════════════════════════════════
-   UTILITY EXTENSIONS
+   UTILITIES
    ══════════════════════════════════════════════ */
 
-/* Fade-up entrance animation variants */
-.fade-up { animation: fadeUp 0.6s ease both; }
-.fade-up-1 { animation-delay: 0.05s; }
-.fade-up-2 { animation-delay: 0.15s; }
-.fade-up-3 { animation-delay: 0.25s; }
+@layer utilities {
+  /* Subtle dotted background texture per Issue 3 */
+  .bg-dot-grid {
+    background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Fade-up entrance animations */
+  .fade-up { animation: fadeUp 0.5s ease both; }
+  .fade-up-1 { animation-delay: 0.05s; }
+  .fade-up-2 { animation-delay: 0.12s; }
+  .fade-up-3 { animation-delay: 0.2s; }
+}
 
 /* ══════════════════════════════════════════════
-   COMPONENT CLASSES (shared, reusable via @apply)
+   COMPONENT CLASSES (Crisp, hairline outlines)
    ══════════════════════════════════════════════ */
 
-/* ── Functional badge (shared base + color variants) ── */
-.badge-base {
-  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border;
-}
-
-.badge-purple {
-  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border
-         bg-purple-50 border-purple-100 text-purple-600;
-}
-
-.badge-success {
-  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border
-         bg-success-bg border-success-border text-success-text;
-}
-
-.badge-danger {
-  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border
-         bg-danger-bg border-danger-border text-danger-text;
-}
-
-/* ── Status dot ── */
+/* ── Status dot (functional bullet indicator) ── */
 .status-dot {
   @apply w-1.5 h-1.5 rounded-full shrink-0;
 }
 
-/* ── Card base ── */
+/* ── Card base (Flat interior, crisp 1px hairline border, NO shadows) ── */
 .card-base {
-  @apply bg-card-bg border border-border rounded-2xl transition-all duration-200;
+  @apply bg-card-bg border border-border rounded-2xl transition-colors duration-150;
 }
 
 .card-base:hover {
-  @apply border-purple-200 shadow-lg;
+  @apply border-purple-300;
 }
 
 /* ── Section heading group ── */
 .section-heading {
-  @apply text-center mb-12;
+  @apply text-center mb-14;
 }
 
 .section-heading h2 {
-  @apply text-3xl font-bold text-text-primary mb-2;
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-3;
   font-family: var(--font-display);
 }
 
 .section-heading p {
-  @apply text-sm text-text-secondary max-w-lg mx-auto;
+  @apply text-base sm:text-lg text-text-secondary max-w-2xl mx-auto;
+  font-family: var(--font-body);
 }
 
-/* ── Button primary ── */
+/* ── Button primary (Flat, crisp, unglossy, restrained) ── */
 .btn-primary {
-  @apply inline-flex items-center gap-2 bg-purple-600 text-white font-bold
-         px-6 py-3 rounded-xl border-none cursor-pointer transition-all duration-200;
-  font-family: var(--font-display);
-  box-shadow: 0 4px 20px rgba(83, 74, 183, 0.35);
+  @apply inline-flex items-center justify-center gap-2.5 bg-purple-600 text-white font-semibold
+         px-8 py-3.5 rounded-xl border border-purple-600 cursor-pointer transition-colors duration-150 text-base;
+  font-family: var(--font-body);
 }
 
 .btn-primary:hover {
-  @apply bg-purple-800 -translate-y-0.5;
-  box-shadow: 0 8px 28px rgba(83, 74, 183, 0.4);
+  @apply bg-purple-800 border-purple-800;
 }
 
 .btn-primary:active {
-  @apply translate-y-0;
+  @apply bg-purple-900 border-purple-900;
 }
 
 /* ── Mono spec treatment (signature detail) ── */
@@ -180,31 +175,26 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-/* ── FAQ item ── */
+/* ── FAQ item (hairline border, flat interior) ── */
 .faq-item {
-  @apply border border-border rounded-xl overflow-hidden transition-colors duration-200 bg-lavender-bg;
-  margin-bottom: 0.75rem;
+  @apply border border-border rounded-2xl overflow-hidden transition-colors duration-150 bg-card-bg mb-3.5;
 }
 
 .faq-item:hover {
-  @apply border-purple-200;
+  @apply border-purple-300;
 }
 
 .faq-question {
-  @apply w-full bg-transparent border-none text-left flex justify-between items-center gap-4 cursor-pointer text-sm font-semibold text-text-primary transition-colors duration-200;
+  @apply w-full bg-transparent border-none text-left flex justify-between items-center gap-4 cursor-pointer text-base sm:text-lg font-semibold text-text-primary transition-colors duration-150 py-5 px-6;
   font-family: var(--font-body);
-  padding: 1.1rem 1.25rem;
 }
 
 .faq-question:hover {
-  @apply bg-purple-50;
+  @apply bg-purple-50/60;
 }
 
 .faq-chevron {
-  @apply w-5 h-5 shrink-0 transition-transform duration-200;
-  stroke: var(--color-purple-400);
-  fill: none;
-  stroke-width: 2;
+  @apply w-6 h-6 shrink-0 transition-transform duration-200 stroke-purple-400 stroke-2 fill-none;
 }
 
 .faq-item.open .faq-chevron {
@@ -215,25 +205,26 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 1.25rem;
-  @apply text-sm text-text-secondary leading-7;
+  padding: 0 1.5rem;
+  @apply text-base text-text-secondary leading-relaxed;
+  font-family: var(--font-body);
 }
 
 .faq-item.open .faq-answer {
-  max-height: 300px;
-  padding: 0 1.25rem 1.1rem;
+  max-height: 350px;
+  padding: 0 1.5rem 1.5rem;
 }
 
-/* ── Upload zone ── */
+/* ── Interactive Upload zone (Dashed hairline exclusively for drop targets) ── */
 .upload-zone {
-  @apply border-2 border-dashed border-purple-200 rounded-2xl bg-lavender-bg text-center cursor-pointer
-         transition-all duration-200 relative flex-1 flex flex-col items-center justify-center overflow-hidden;
-  min-height: 210px;
-  padding: 1.5rem 1rem;
+  @apply border-2 border-dashed border-purple-200 rounded-2xl bg-card-bg text-center cursor-pointer
+         transition-colors duration-150 relative flex-1 flex flex-col items-center justify-center overflow-hidden;
+  min-height: 240px;
+  padding: 1.75rem 1.5rem;
 }
 
 .upload-zone:hover {
-  @apply border-purple-400 bg-purple-50 -translate-y-0.5;
+  @apply border-purple-400 bg-purple-50/40;
 }
 
 .upload-zone.dragover {
@@ -242,20 +233,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Output zone ── */
 .output-zone {
-  @apply border-2 border-dashed border-border rounded-2xl bg-lavender-bg flex-1 flex flex-col items-center justify-center overflow-hidden relative transition-all duration-300;
-  min-height: 210px;
-  padding: 1rem;
+  @apply border-2 border-dashed border-border rounded-2xl bg-card-bg flex-1 flex flex-col items-center justify-center overflow-hidden relative transition-colors duration-150;
+  min-height: 240px;
+  padding: 1.75rem 1.5rem;
 }
 
 .output-zone.has-result {
-  @apply border-purple-200 bg-purple-50;
+  @apply border-solid border-purple-300 bg-purple-50/30;
 }
 
 /* ── Loading bar ── */
 .loading-bar {
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-purple-400), var(--color-purple-600));
-  border-radius: 4px;
+  height: 4px;
+  background-color: var(--color-purple-600);
+  border-radius: 2px;
   width: 0;
   transition: width 1.5s ease;
 }
@@ -265,60 +256,67 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
   width: 100%;
   height: 100%;
-  min-height: 170px;
+  min-height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 /* ── Output preview ── */
 .output-preview {
+  display: none;
   width: 100%;
   height: 100%;
-  min-height: 180px;
+  min-height: 200px;
   object-fit: cover;
-  border-radius: 10px;
-  display: none;
+  border-radius: 12px;
 }
 
-/* ── Gallery slot ── */
-.gallery-slot {
-  @apply rounded-xl bg-purple-100 border-2 border-dashed border-purple-200
-         flex flex-col items-center justify-center cursor-pointer overflow-hidden
-         relative transition-all duration-200;
-  aspect-ratio: 4/3;
-  min-height: 300px;
+/* ── Dedicated Example-Output Gallery Row ── */
+.gallery-card {
+  @apply bg-card-bg border border-border rounded-2xl p-6 sm:p-7 transition-colors duration-150;
 }
 
-.gallery-slot:hover {
-  @apply border-purple-400 bg-purple-50;
+.gallery-card:hover {
+  @apply border-purple-300;
 }
 
-.gallery-slot.douga {
-  @apply bg-purple-50;
-  border-color: #C4BFEA;
+.gallery-row {
+  @apply grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-3 rounded-xl overflow-hidden mb-4;
 }
 
-.gallery-slot img {
-  @apply w-full h-full object-cover block rounded-lg;
+.gallery-cell {
+  @apply relative rounded-xl overflow-hidden border border-border bg-lavender-bg aspect-4/3 flex items-center justify-center;
+}
+
+.gallery-cell.douga {
+  @apply border-purple-200 bg-purple-50/50;
+}
+
+.gallery-cell img {
+  @apply w-full h-full object-cover block;
 }
 
 /* ── Comparison rows (evaluation page) ── */
 .comparison-row {
-  @apply bg-card-bg border border-border rounded-2xl items-center transition-shadow duration-200;
+  @apply bg-card-bg border border-border rounded-2xl items-center transition-colors duration-150;
   display: grid;
-  grid-template-columns: 1fr 160px 1fr;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 0.75rem;
+  grid-template-columns: 1fr 180px 1fr;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
 }
 
 .comparison-row:hover {
-  box-shadow: 0 8px 32px rgba(83, 74, 183, 0.09);
+  @apply border-purple-300;
 }
 
 /* ── Dashboard card ── */
 .dashboard-card {
-  @apply bg-card-bg border border-border rounded-2xl p-6;
-  min-height: 156px;
+  @apply bg-card-bg border border-border rounded-2xl p-7 sm:p-8 transition-colors duration-150;
+  min-height: 175px;
+}
+
+.dashboard-card:hover {
+  @apply border-purple-300;
 }
 
 /* ══════════════════════════════════════════════
@@ -326,27 +324,13 @@ h1, h2, h3, h4, h5, h6 {
    ══════════════════════════════════════════════ */
 
 @media (max-width: 767px) {
-  .frames-row-grid {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .frame-arrow-cell {
-    transform: rotate(90deg);
-    width: 100%;
-    height: 24px;
-  }
-
-  .gallery-frames-grid {
-    grid-template-columns: 1fr 14px 1fr 14px 1fr !important;
+  .gallery-row {
+    grid-template-columns: 1fr 12px 1fr 12px 1fr;
+    gap: 4px;
   }
 
   .comparison-row {
     grid-template-columns: 1fr 110px 1fr;
     padding: 1rem;
-  }
-
-  .comparison-value-text {
-    font-size: var(--text-xl) !important;
   }
 }
