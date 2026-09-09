@@ -1,0 +1,76 @@
+{
+  "dataset": "ATD-12k",
+  "testTriplets": 2000,
+  "overall": {
+    "psnr": {
+      "mean": 29.25,
+      "sd": 4.96
+    },
+    "ssim": {
+      "mean": 0.95,
+      "sd": 0.03
+    },
+    "lpips": {
+      "mean": 6.32,
+      "sd": 5.1
+    },
+    "cf": {
+      "mean": 5.08,
+      "sd": 5.89
+    }
+  },
+  "breakdown": {
+    "easy": {
+      "psnr": 31.56,
+      "ssim": 0.96,
+      "lpips": 3.7,
+      "cf": 2.51
+    },
+    "medium": {
+      "psnr": 28.29,
+      "ssim": 0.95,
+      "lpips": 5.97,
+      "cf": 4.51
+    },
+    "hard": {
+      "psnr": 26.85,
+      "ssim": 0.93,
+      "lpips": 1.09,
+      "cf": 9.87
+    }
+  },
+  "comparison": {
+    "baselineName": "AnimeInterp",
+    "candidateName": "ROID-AI",
+    "metrics": {
+      "psnr": {
+        "candidate": 29.25,
+        "baseline": 29.68,
+        "higherIsBetter": true,
+        "unit": " dB",
+        "precision": 2
+      },
+      "ssim": {
+        "candidate": 0.95,
+        "baseline": 0.958,
+        "higherIsBetter": true,
+        "unit": "",
+        "precision": 3
+      },
+      "lpips": {
+        "candidate": 6.32,
+        "baseline": 5.059,
+        "higherIsBetter": false,
+        "unit": "",
+        "precision": 3
+      },
+      "cf": {
+        "candidate": 5.08,
+        "baseline": 5.564,
+        "higherIsBetter": false,
+        "unit": "",
+        "precision": 3
+      }
+    }
+  }
+}

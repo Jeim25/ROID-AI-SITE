@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Tailwind build output (regenerated via npm run build)
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
