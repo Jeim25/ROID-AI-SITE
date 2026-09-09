@@ -1,0 +1,352 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+/* ══════════════════════════════════════════════
+   DESIGN TOKENS — Tailwind v4 CSS-first config
+   ══════════════════════════════════════════════ */
+
+@theme {
+  /* ── Font families ── */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ── Type scale ── */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+
+  /* ── Purple palette (carried over, deduplicated) ── */
+  --color-purple-50: #EEEDFE;
+  --color-purple-100: #CECBF6;
+  --color-purple-200: #AFA9EC;
+  --color-purple-400: #7F77DD;
+  --color-purple-600: #534AB7;
+  --color-purple-800: #3C3489;
+  --color-purple-900: #26215C;
+
+  /* ── Semantic surfaces ── */
+  --color-lavender-bg: #F4F3FD;
+  --color-card-bg: #FFFFFF;
+  --color-border: #D8D5F5;
+
+  /* ── Text colors ── */
+  --color-text-primary: #1A1533;
+  --color-text-secondary: #5A5478;
+  --color-text-muted: #9A94B8;
+
+  /* ── Success (3-step: bg / border / text) ── */
+  --color-success-bg: #F0FBF5;
+  --color-success-border: #B8E8CB;
+  --color-success-text: #1A6B3A;
+  --color-success-dot: #3DAD6A;
+
+  /* ── Danger (3-step: bg / border / text) ── */
+  --color-danger-bg: #FFF4F4;
+  --color-danger-border: #F5C2C2;
+  --color-danger-text: #8B2323;
+  --color-danger-dot: #D95454;
+}
+
+/* ══════════════════════════════════════════════
+   BASE STYLES
+   ══════════════════════════════════════════════ */
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-lavender-bg);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* ══════════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ══════════════════════════════════════════════ */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════════════
+   UTILITY EXTENSIONS
+   ══════════════════════════════════════════════ */
+
+/* Fade-up entrance animation variants */
+.fade-up { animation: fadeUp 0.6s ease both; }
+.fade-up-1 { animation-delay: 0.05s; }
+.fade-up-2 { animation-delay: 0.15s; }
+.fade-up-3 { animation-delay: 0.25s; }
+
+/* ══════════════════════════════════════════════
+   COMPONENT CLASSES (shared, reusable via @apply)
+   ══════════════════════════════════════════════ */
+
+/* ── Functional badge (shared base + color variants) ── */
+.badge-base {
+  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border;
+}
+
+.badge-purple {
+  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border
+         bg-purple-50 border-purple-100 text-purple-600;
+}
+
+.badge-success {
+  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border
+         bg-success-bg border-success-border text-success-text;
+}
+
+.badge-danger {
+  @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-lg border
+         bg-danger-bg border-danger-border text-danger-text;
+}
+
+/* ── Status dot ── */
+.status-dot {
+  @apply w-1.5 h-1.5 rounded-full shrink-0;
+}
+
+/* ── Card base ── */
+.card-base {
+  @apply bg-card-bg border border-border rounded-2xl transition-all duration-200;
+}
+
+.card-base:hover {
+  @apply border-purple-200 shadow-lg;
+}
+
+/* ── Section heading group ── */
+.section-heading {
+  @apply text-center mb-12;
+}
+
+.section-heading h2 {
+  @apply text-3xl font-bold text-text-primary mb-2;
+  font-family: var(--font-display);
+}
+
+.section-heading p {
+  @apply text-sm text-text-secondary max-w-lg mx-auto;
+}
+
+/* ── Button primary ── */
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-purple-600 text-white font-bold
+         px-6 py-3 rounded-xl border-none cursor-pointer transition-all duration-200;
+  font-family: var(--font-display);
+  box-shadow: 0 4px 20px rgba(83, 74, 183, 0.35);
+}
+
+.btn-primary:hover {
+  @apply bg-purple-800 -translate-y-0.5;
+  box-shadow: 0 8px 28px rgba(83, 74, 183, 0.4);
+}
+
+.btn-primary:active {
+  @apply translate-y-0;
+}
+
+/* ── Mono spec treatment (signature detail) ── */
+.spec-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+/* ── FAQ item ── */
+.faq-item {
+  @apply border border-border rounded-xl overflow-hidden transition-colors duration-200 bg-lavender-bg;
+  margin-bottom: 0.75rem;
+}
+
+.faq-item:hover {
+  @apply border-purple-200;
+}
+
+.faq-question {
+  @apply w-full bg-transparent border-none text-left flex justify-between items-center gap-4 cursor-pointer text-sm font-semibold text-text-primary transition-colors duration-200;
+  font-family: var(--font-body);
+  padding: 1.1rem 1.25rem;
+}
+
+.faq-question:hover {
+  @apply bg-purple-50;
+}
+
+.faq-chevron {
+  @apply w-5 h-5 shrink-0 transition-transform duration-200;
+  stroke: var(--color-purple-400);
+  fill: none;
+  stroke-width: 2;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.25rem;
+  @apply text-sm text-text-secondary leading-7;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 1.25rem 1.1rem;
+}
+
+/* ── Upload zone ── */
+.upload-zone {
+  @apply border-2 border-dashed border-purple-200 rounded-2xl bg-lavender-bg text-center cursor-pointer
+         transition-all duration-200 relative flex-1 flex flex-col items-center justify-center overflow-hidden;
+  min-height: 210px;
+  padding: 1.5rem 1rem;
+}
+
+.upload-zone:hover {
+  @apply border-purple-400 bg-purple-50 -translate-y-0.5;
+}
+
+.upload-zone.dragover {
+  @apply border-purple-600 bg-purple-50;
+}
+
+/* ── Output zone ── */
+.output-zone {
+  @apply border-2 border-dashed border-border rounded-2xl bg-lavender-bg flex-1 flex flex-col items-center justify-center overflow-hidden relative transition-all duration-300;
+  min-height: 210px;
+  padding: 1rem;
+}
+
+.output-zone.has-result {
+  @apply border-purple-200 bg-purple-50;
+}
+
+/* ── Loading bar ── */
+.loading-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-purple-400), var(--color-purple-600));
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+/* ── Upload preview ── */
+.upload-preview {
+  display: none;
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ── Output preview ── */
+.output-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+
+/* ── Gallery slot ── */
+.gallery-slot {
+  @apply rounded-xl bg-purple-100 border-2 border-dashed border-purple-200
+         flex flex-col items-center justify-center cursor-pointer overflow-hidden
+         relative transition-all duration-200;
+  aspect-ratio: 4/3;
+  min-height: 300px;
+}
+
+.gallery-slot:hover {
+  @apply border-purple-400 bg-purple-50;
+}
+
+.gallery-slot.douga {
+  @apply bg-purple-50;
+  border-color: #C4BFEA;
+}
+
+.gallery-slot img {
+  @apply w-full h-full object-cover block rounded-lg;
+}
+
+/* ── Comparison rows (evaluation page) ── */
+.comparison-row {
+  @apply bg-card-bg border border-border rounded-2xl items-center transition-shadow duration-200;
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.comparison-row:hover {
+  box-shadow: 0 8px 32px rgba(83, 74, 183, 0.09);
+}
+
+/* ── Dashboard card ── */
+.dashboard-card {
+  @apply bg-card-bg border border-border rounded-2xl p-6;
+  min-height: 156px;
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+  .frames-row-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .frame-arrow-cell {
+    transform: rotate(90deg);
+    width: 100%;
+    height: 24px;
+  }
+
+  .gallery-frames-grid {
+    grid-template-columns: 1fr 14px 1fr 14px 1fr !important;
+  }
+
+  .comparison-row {
+    grid-template-columns: 1fr 110px 1fr;
+    padding: 1rem;
+  }
+
+  .comparison-value-text {
+    font-size: var(--text-xl) !important;
+  }
+}
