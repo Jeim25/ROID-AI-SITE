@@ -10,135 +10,148 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="#">ROID<span>-AI</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
+  <nav class="sticky top-0 z-50 bg-lavender-bg/90 backdrop-blur-xl border-b border-border py-3">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <a class="font-display font-bold text-xl text-purple-600 tracking-tight no-underline" href="#">ROID<span class="text-purple-400">-AI</span></a>
+
+      <!-- Mobile hamburger -->
+      <button id="navToggle" class="lg:hidden border border-border rounded-lg p-1.5 cursor-pointer bg-transparent" type="button" aria-label="Toggle menu">
+        <svg class="w-5 h-5 stroke-text-secondary" viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
       </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto me-3 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#how-it-works">How it works</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="evaluation.html">Performance Metrics</a></li>
-          <li class="nav-item"><a class="nav-link" href="#scope">Scope</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-        </ul>
-        <a href="#tool" class="btn-nav nav-link">Try it free</a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-1">
+        <a class="text-sm font-semibold text-text-secondary px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#how-it-works">How it works</a>
+        <a class="text-sm font-semibold text-text-secondary px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#gallery">Gallery</a>
+        <a class="text-sm font-semibold text-text-secondary px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="evaluation.html">Performance Metrics</a>
+        <a class="text-sm font-semibold text-text-secondary px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#scope">Scope</a>
+        <a class="text-sm font-semibold text-text-secondary px-3.5 py-1.5 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#faq">FAQ</a>
+        <a href="#tool" class="ml-2 bg-purple-600 text-white text-sm font-semibold px-4 py-1.5 rounded-xl no-underline transition-all duration-200 hover:bg-purple-800 hover:-translate-y-px">Try it free</a>
       </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto px-6 pt-4 pb-2 flex flex-col gap-1">
+      <a class="text-sm font-semibold text-text-secondary px-3.5 py-2 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#how-it-works">How it works</a>
+      <a class="text-sm font-semibold text-text-secondary px-3.5 py-2 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#gallery">Gallery</a>
+      <a class="text-sm font-semibold text-text-secondary px-3.5 py-2 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="evaluation.html">Performance Metrics</a>
+      <a class="text-sm font-semibold text-text-secondary px-3.5 py-2 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#scope">Scope</a>
+      <a class="text-sm font-semibold text-text-secondary px-3.5 py-2 rounded-lg no-underline transition-all duration-200 hover:text-purple-600 hover:bg-purple-50" href="#faq">FAQ</a>
+      <a href="#tool" class="mt-2 bg-purple-600 text-white text-sm font-semibold text-center px-4 py-2.5 rounded-xl no-underline transition-all duration-200 hover:bg-purple-800">Try it free</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-section" id="tool">
-    <div class="container">
+  <section class="py-24 text-center relative" id="tool">
+    <div class="max-w-6xl mx-auto px-6">
       <div class="fade-up fade-up-1">
-        <span class="hero-badge">ROI-Guided Deformable Convolutions</span>
+        <span class="text-xs font-semibold tracking-widest uppercase text-purple-600 mb-6 inline-block">ROI-Guided Deformable Convolutions</span>
       </div>
-      <h1 class="hero-title fade-up fade-up-2">
-        Automated Anime<br><span class="accent">In-Betweening</span>
+      <h1 class="font-display font-bold text-4xl md:text-5xl tracking-tight leading-tight text-text-primary mb-4 fade-up fade-up-2">
+        Automated Anime<br><span class="bg-gradient-to-br from-purple-600 to-purple-400 bg-clip-text text-transparent">In-Betweening</span>
       </h1>
-      <p class="hero-subtitle fade-up fade-up-3">
-        Upload two genga keyframes and generate a smooth douga in seconds. Production-ready at 1920×1080.
+      <p class="text-lg text-text-secondary max-w-lg mx-auto mb-10 leading-relaxed fade-up fade-up-3">
+        Upload two genga keyframes and generate a smooth douga in seconds. Production-ready at <span class="spec-mono">1920×1080</span>.
       </p>
 
       <!-- TOOL CARD -->
-      <div class="tool-card fade-up fade-up-3">
-
+      <div class="card-base rounded-3xl p-6 md:p-8 max-w-5xl mx-auto fade-up fade-up-3">
         <!-- 3-col: Frame 0 | Output | Frame 1 -->
-        <div class="frames-row" style="gap: 0;">
+        <div class="frames-row-grid grid grid-cols-1 md:grid-cols-[1fr_40px_1fr_40px_1fr] gap-3 md:gap-0 items-stretch">
 
           <!-- Frame 0 -->
-          <div class="frame-col">
+          <div class="flex flex-col">
             <div class="upload-zone" id="dropzone0"
               ondragover="handleDragOver(event,this)"
               ondragleave="handleDragLeave(this)"
               ondrop="handleDrop(event,0)"
               onclick="triggerUpload(0)">
-              <span class="frame-tag">Frame 0</span>
-              <div class="upload-icon">
-                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span class="absolute top-2.5 left-2.5 bg-purple-600 text-white font-display text-xs font-bold px-2 py-0.5 rounded-lg">Frame 0</span>
+              <div class="w-11 h-11 bg-purple-50 border border-purple-100 rounded-xl flex items-center justify-center mx-auto mb-2">
+                <svg class="w-5 h-5 stroke-purple-400" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="upload-label">Click or drop</p>
-              <p class="upload-hint">JPG · 1920×1080</p>
+              <p class="font-display text-sm font-semibold text-purple-800 mb-0.5">Click or drop</p>
+              <p class="text-xs text-text-muted"><span class="spec-mono">JPG</span> · <span class="spec-mono">1920×1080</span></p>
               <img class="upload-preview" id="preview0" alt="Frame 0" />
             </div>
-            <div class="frame-label">Genga A</div>
+            <div class="font-display text-xs font-bold tracking-widest uppercase text-center pt-2 text-text-muted">Genga A</div>
           </div>
 
           <!-- Arrow -->
-          <div class="frame-arrow">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          <div class="frame-arrow-cell flex items-center justify-center w-10 shrink-0 mx-auto">
+            <svg class="w-4.5 h-4.5 stroke-purple-200" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
 
           <!-- Output (middle) -->
-          <div class="frame-col">
+          <div class="flex flex-col">
             <div class="output-zone" id="outputZone">
-              <span class="frame-tag generated" id="outputTag" style="display:none;">Generated</span>
-              <div class="output-placeholder" id="outputPlaceholder">
-                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="absolute top-2.5 left-2.5 bg-purple-400 text-white font-display text-xs font-bold px-2 py-0.5 rounded-lg hidden" id="outputTag">Generated</span>
+              <div class="flex flex-col items-center gap-2 text-text-muted text-sm text-center" id="outputPlaceholder">
+                <svg class="w-7 h-7 stroke-purple-200" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span>In-between frame<br>appears here</span>
               </div>
               <img class="output-preview" id="outputPreview" alt="Generated frame" />
             </div>
-            <div class="frame-label is-output">↑ Douga Output</div>
+            <div class="font-display text-xs font-bold tracking-widest uppercase text-center pt-2 text-purple-400">↑ Douga Output</div>
           </div>
 
           <!-- Arrow -->
-          <div class="frame-arrow">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          <div class="frame-arrow-cell flex items-center justify-center w-10 shrink-0 mx-auto">
+            <svg class="w-4.5 h-4.5 stroke-purple-200" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
 
           <!-- Frame 1 -->
-          <div class="frame-col">
+          <div class="flex flex-col">
             <div class="upload-zone" id="dropzone1"
               ondragover="handleDragOver(event,this)"
               ondragleave="handleDragLeave(this)"
               ondrop="handleDrop(event,1)"
               onclick="triggerUpload(1)">
-              <span class="frame-tag">Frame 1</span>
-              <div class="upload-icon">
-                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span class="absolute top-2.5 left-2.5 bg-purple-600 text-white font-display text-xs font-bold px-2 py-0.5 rounded-lg">Frame 1</span>
+              <div class="w-11 h-11 bg-purple-50 border border-purple-100 rounded-xl flex items-center justify-center mx-auto mb-2">
+                <svg class="w-5 h-5 stroke-purple-400" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="upload-label">Click or drop</p>
-              <p class="upload-hint">JPG · 1920×1080</p>
+              <p class="font-display text-sm font-semibold text-purple-800 mb-0.5">Click or drop</p>
+              <p class="text-xs text-text-muted"><span class="spec-mono">JPG</span> · <span class="spec-mono">1920×1080</span></p>
               <img class="upload-preview" id="preview1" alt="Frame 1" />
             </div>
-            <div class="frame-label">Genga B</div>
+            <div class="font-display text-xs font-bold tracking-widest uppercase text-center pt-2 text-text-muted">Genga B</div>
           </div>
 
         </div><!-- /frames-row -->
 
-        <input type="file" id="fileInput0" accept=".jpg,.jpeg" style="display:none" onchange="handleFile(event,0)" />
-        <input type="file" id="fileInput1" accept=".jpg,.jpeg" style="display:none" onchange="handleFile(event,1)" />
+        <input type="file" id="fileInput0" accept=".jpg,.jpeg" class="hidden" onchange="handleFile(event,0)" />
+        <input type="file" id="fileInput1" accept=".jpg,.jpeg" class="hidden" onchange="handleFile(event,1)" />
 
         <!-- Interpolate button -->
         <div class="text-center">
-          <button class="btn-interpolate" onclick="triggerInterpolate()">
-            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <button class="btn-primary text-base mt-6" onclick="triggerInterpolate()">
+            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             Interpolate Frame
           </button>
         </div>
 
         <!-- Progress bar -->
-        <div id="progressWrap" style="display:none; margin-top:1.25rem;">
-          <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-            <span style="font-size:0.78rem; color:var(--text-secondary);">Processing frames…</span>
-            <span id="progressPct" style="font-size:0.78rem; color:var(--purple-600); font-weight:600;">0%</span>
+        <div id="progressWrap" class="hidden mt-5">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-xs text-text-secondary">Processing frames…</span>
+            <span id="progressPct" class="text-xs text-purple-600 font-semibold spec-mono">0%</span>
           </div>
-          <div style="background:var(--purple-50); border-radius:100px; overflow:hidden; height:4px;">
+          <div class="bg-purple-50 rounded-md overflow-hidden h-1">
             <div class="loading-bar" id="loadingBar"></div>
           </div>
         </div>
 
         <!-- Download button (hidden until result) -->
-        <div id="downloadWrap" style="display:none; text-align:center; margin-top:1rem;">
-          <span style="display:inline-flex;align-items:center;gap:8px;background:var(--purple-50);border:1px solid var(--purple-100);border-radius:100px;padding:4px 14px;margin-bottom:0.75rem;">
-            <span style="width:7px;height:7px;border-radius:50%;background:var(--purple-400);display:inline-block;"></span>
-            <span style="font-size:0.75rem;color:var(--purple-600);font-weight:600;">Frame generated successfully</span>
+        <div id="downloadWrap" class="hidden text-center mt-4">
+          <span class="badge-purple mb-3 inline-flex">
+            <span class="status-dot bg-purple-400"></span>
+            <span>Frame generated successfully</span>
           </span><br>
-          <button style="background:var(--purple-600);color:#fff;border:none;border-radius:10px;padding:0.55rem 1.5rem;font-family:var(--display-font);font-weight:700;font-size:0.85rem;cursor:pointer;margin-top:4px;">
-            ↓ Download Douga (JPG)
+          <button class="btn-primary text-sm mt-1">
+            ↓ Download Douga (<span class="spec-mono">JPG</span>)
           </button>
         </div>
 

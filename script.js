@@ -1,14 +1,16 @@
-// ── FONT PICKER ──
-function setFont(bodyFont, displayFont) {
-  document.documentElement.style.setProperty('--body-font', "'" + bodyFont + "', sans-serif");
-  document.documentElement.style.setProperty('--display-font', "'" + displayFont + "', sans-serif");
-  document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-  if (event && event.target) event.target.classList.add('active');
-}
-// Mark first as active on load
+// ── MOBILE NAV TOGGLE ──
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('.font-btn');
-  if (btn) btn.classList.add('active');
+  const toggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (toggle && mobileMenu) {
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  }
   populatePerformanceMetrics();
 });
 
@@ -62,13 +64,14 @@ function triggerInterpolate() {
   const tag = document.getElementById('outputTag');
   const dlWrap = document.getElementById('downloadWrap');
 
-  wrap.style.display = 'block';
-  dlWrap.style.display = 'none';
+  wrap.classList.remove('hidden');
+  dlWrap.classList.add('hidden');
   bar.style.width = '0';
   pct.textContent = '0%';
+  placeholder.classList.remove('hidden');
   placeholder.style.display = 'flex';
   preview.style.display = 'none';
-  tag.style.display = 'none';
+  tag.classList.add('hidden');
   zone.classList.remove('has-result');
 
   setTimeout(() => { bar.style.width = '40%'; pct.textContent = '40%'; }, 100);
@@ -76,18 +79,18 @@ function triggerInterpolate() {
   setTimeout(() => { bar.style.width = '100%'; pct.textContent = '100%'; }, 1800);
 
   setTimeout(() => {
-    wrap.style.display = 'none';
+    wrap.classList.add('hidden');
     const src0 = document.getElementById('preview0') ? document.getElementById('preview0').src : '';
     if (src0 && src0 !== window.location.href) {
       preview.src = src0;
       preview.style.display = 'block';
-      placeholder.style.display = 'none';
+      placeholder.classList.add('hidden');
     } else {
-      placeholder.innerHTML = '<svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--purple-400);fill:none;stroke-width:1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span style="color:var(--purple-600);font-weight:600;">Frame Ready</span>';
+      placeholder.innerHTML = '<svg class="w-8 h-8 stroke-purple-400" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span class="text-purple-600 font-semibold">Frame Ready</span>';
     }
-    if (tag) tag.style.display = 'block';
+    if (tag) tag.classList.remove('hidden');
     zone.classList.add('has-result');
-    dlWrap.style.display = 'block';
+    dlWrap.classList.remove('hidden');
   }, 2300);
 }
 
