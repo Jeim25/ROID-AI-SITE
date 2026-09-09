@@ -301,11 +301,6 @@ const defaultTeamMembers = [
     role: "Lead Researcher",
     bio: "Spearheaded the ROID-AI neural network architecture design, ROI-guided deformable convolution integration, and the official interactive research platform. Led the end-to-end implementation and repository workflows.",
     image: "assets/images/team-member-1.jpg",
-    placeholder: {
-      initials: "JM",
-      tag: "Lead Dev",
-      bgClass: "bg-purple-600"
-    },
     social: {
       github: "https://github.com/Jeim25",
       linkedin: "#",
@@ -324,11 +319,6 @@ const defaultTeamMembers = [
     role: "Lead Developer",
     bio: "Focused on mathematical modeling of non-linear character motions, deformable offset estimation, and optical flow refinements to eliminate ghosting artifacts across large displacement keyframes.",
     image: "assets/images/team-member-2.jpg",
-    placeholder: {
-      initials: "TM",
-      tag: "CV Researcher",
-      bgClass: "bg-purple-800"
-    },
     social: {
       github: "#",
       linkedin: "#",
@@ -347,11 +337,6 @@ const defaultTeamMembers = [
     role: "Researcher & Developer",
     bio: "Managed the ATD-12K dataset curation, high-resolution keyframe pairing, data augmentation pipelines, and motion difficulty classification into Easy, Medium, and Hard cohorts.",
     image: "assets/images/team-member-3.jpg",
-    placeholder: {
-      initials: "TM",
-      tag: "Data Specialist",
-      bgClass: "bg-purple-600"
-    },
     social: {
       github: "#",
       linkedin: "#",
@@ -370,11 +355,6 @@ const defaultTeamMembers = [
     role: "Researcher & Developer",
     bio: "Led quantitative validation across PSNR, SSIM, LPIPS, and Chamfer Distance metrics. Designed comparative benchmarks between ROID-AI and baseline state-of-the-art models like AnimeInterp.",
     image: "assets/images/team-member-4.jpg",
-    placeholder: {
-      initials: "TM",
-      tag: "Benchmarking",
-      bgClass: "bg-purple-900"
-    },
     social: {
       github: "#",
       linkedin: "#",
@@ -401,10 +381,6 @@ async function loadTeamMembers() {
 }
 
 function renderTeamCard(member) {
-  const placeholder = member.placeholder || {};
-  const initials = placeholder.initials || 'TM';
-  const tag = placeholder.tag || 'Team Member';
-  const bgClass = placeholder.bgClass || 'bg-purple-600';
   const social = member.social || {};
 
   let socialLinksHtml = '';
@@ -469,17 +445,7 @@ function renderTeamCard(member) {
         <div
           class="relative w-36 h-36 sm:w-40 sm:h-40 rounded-2xl overflow-hidden border-2 border-purple-200 bg-linear-to-br from-purple-100 via-purple-50 to-white flex items-center justify-center shadow-xs group">
           <!-- Avatar image slot -->
-          <img class="w-full h-full object-cover" src="${member.image || ''}" alt="${member.name || 'Team Member'}"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <!-- Styled Avatar Placeholder (Fallback) -->
-          <div
-            class="w-full h-full hidden flex-col items-center justify-center p-3 text-center bg-linear-to-b from-purple-50 to-purple-100/60">
-            <div
-              class="w-16 h-16 rounded-full ${bgClass} text-white font-bold text-2xl flex items-center justify-center mb-2 shadow-xs">
-              ${initials}
-            </div>
-            <span class="text-xs font-semibold text-purple-800 tracking-wide">${tag}</span>
-          </div>
+          <img class="w-full h-full object-cover" src="${member.image || ''}" alt="${member.name || 'Team Member'}" />
         </div>
 
         <!-- Social links -->

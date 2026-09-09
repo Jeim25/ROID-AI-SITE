@@ -5,11 +5,6 @@
     "role": "Lead Researcher",
     "bio": "Spearheaded the ROID-AI neural network architecture design, ROI-guided deformable convolution integration, and the official interactive research platform. Led the end-to-end implementation and repository workflows.",
     "image": "assets/images/team-member-1.jpg",
-    "placeholder": {
-      "initials": "JM",
-      "tag": "Lead Dev",
-      "bgClass": "bg-purple-600"
-    },
     "social": {
       "github": "https://github.com/Jeim25",
       "linkedin": "#",
@@ -28,11 +23,6 @@
     "role": "Lead Developer",
     "bio": "Focused on mathematical modeling of non-linear character motions, deformable offset estimation, and optical flow refinements to eliminate ghosting artifacts across large displacement keyframes.",
     "image": "assets/images/team-member-2.jpg",
-    "placeholder": {
-      "initials": "TM",
-      "tag": "CV Researcher",
-      "bgClass": "bg-purple-800"
-    },
     "social": {
       "github": "#",
       "linkedin": "#",
@@ -51,11 +41,6 @@
     "role": "Researcher & Developer",
     "bio": "Managed the ATD-12K dataset curation, high-resolution keyframe pairing, data augmentation pipelines, and motion difficulty classification into Easy, Medium, and Hard cohorts.",
     "image": "assets/images/team-member-3.jpg",
-    "placeholder": {
-      "initials": "TM",
-      "tag": "Data Specialist",
-      "bgClass": "bg-purple-600"
-    },
     "social": {
       "github": "#",
       "linkedin": "#",
@@ -74,11 +59,6 @@
     "role": "Researcher & Developer",
     "bio": "Led quantitative validation across PSNR, SSIM, LPIPS, and Chamfer Distance metrics. Designed comparative benchmarks between ROID-AI and baseline state-of-the-art models like AnimeInterp.",
     "image": "assets/images/team-member-4.jpg",
-    "placeholder": {
-      "initials": "TM",
-      "tag": "Benchmarking",
-      "bgClass": "bg-purple-900"
-    },
     "social": {
       "github": "#",
       "linkedin": "#",
