@@ -33,6 +33,9 @@ Presents a structured comparison of ROID-AI vs. AnimeInterp across:
 
 Results are broken down by motion difficulty tier: **Easy**, **Medium**, **Hard**, and **Overall** — evaluated on the ATD-12K dataset (2,000 test triplets).
 
+### `team.html` — Research & Development Team
+Features the 4-member thesis team behind the ROID-AI research, model architecture, data pipelines, benchmark evaluations, and web development.
+
 ---
 
 ## Tech Stack
