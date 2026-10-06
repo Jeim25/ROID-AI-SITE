@@ -3,40 +3,40 @@
   "testTriplets": 2000,
   "overall": {
     "psnr": {
-      "mean": 29.25,
-      "sd": 4.96
+      "mean": 29.04,
+      "sd": 5.18
     },
     "ssim": {
-      "mean": 0.95,
-      "sd": 0.03
+      "mean": 0.9546,
+      "sd": 0.0288
     },
     "lpips": {
-      "mean": 6.32,
-      "sd": 5.1
+      "mean": 5.8,
+      "sd": 5.23
     },
     "cf": {
-      "mean": 5.08,
-      "sd": 5.89
+      "mean": 4.97,
+      "sd": 5.73
     }
   },
   "breakdown": {
     "easy": {
-      "psnr": 31.56,
-      "ssim": 0.96,
-      "lpips": 3.7,
-      "cf": 2.51
+      "psnr": 31.25,
+      "ssim": 0.9688,
+      "lpips": 3.03,
+      "cf": 2.38
     },
     "medium": {
-      "psnr": 28.29,
-      "ssim": 0.95,
-      "lpips": 5.97,
-      "cf": 4.51
+      "psnr": 28.62,
+      "ssim": 0.9555,
+      "lpips": 5.13,
+      "cf": 4.27
     },
     "hard": {
-      "psnr": 26.85,
-      "ssim": 0.93,
-      "lpips": 1.09,
-      "cf": 9.87
+      "psnr": 26.41,
+      "ssim": 0.9338,
+      "lpips": 10.46,
+      "cf": 9.39
     }
   },
   "comparison": {
@@ -44,29 +44,29 @@
     "candidateName": "ROID-AI",
     "metrics": {
       "psnr": {
-        "candidate": 29.25,
+        "candidate": 29.04,
         "baseline": 29.68,
         "higherIsBetter": true,
         "unit": " dB",
         "precision": 2
       },
       "ssim": {
-        "candidate": 0.95,
-        "baseline": 0.958,
+        "candidate": 0.9546,
+        "baseline": 0.9583,
         "higherIsBetter": true,
         "unit": "",
         "precision": 3
       },
       "lpips": {
-        "candidate": 6.32,
-        "baseline": 5.059,
+        "candidate": 5.8,
+        "baseline": 6.66,
         "higherIsBetter": false,
         "unit": "",
         "precision": 3
       },
       "cf": {
-        "candidate": 5.08,
-        "baseline": 5.564,
+        "candidate": 4.97,
+        "baseline": 5.59,
         "higherIsBetter": false,
         "unit": "",
         "precision": 3
