@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — ROID-AI | Research & Development Team</title>
+  <link rel="stylesheet" href="dist/output.css?v=3" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-50 bg-lavender-bg/90 backdrop-blur-xl border-b border-border py-4">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+      <a class="font-bold text-2xl text-purple-600 tracking-tight no-underline" href="index.html">ROID<span
+          class="text-purple-400">-AI</span></a>
+
+      <!-- Mobile hamburger -->
+      <button id="navToggle" class="lg:hidden border border-border rounded-lg p-2 cursor-pointer bg-transparent"
+        type="button" aria-label="Toggle menu">
+        <svg class="w-6 h-6 stroke-text-secondary" viewBox="0 0 24 24" fill="none" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-2">
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#how-it-works">How it works</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#gallery">Gallery</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#scope">Scope</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#faq">FAQ</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="team.html">Our Team</a>
+        <a href="evaluation.html"
+          class="ml-3 bg-purple-600 text-white text-base font-semibold px-5 py-2 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Performance
+          Metrics</a>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-6 pt-4 pb-2">
+      <div class="flex flex-col gap-1.5">
+        <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#how-it-works">How it works</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#gallery">Gallery</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#scope">Scope</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="index.html#faq">FAQ</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="team.html">Our Team</a>
+        <a href="evaluation.html"
+          class="mt-2 bg-purple-600 text-white text-base font-semibold text-center px-5 py-3 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800">Performance
+          Metrics</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TEAM SECTION -->
+  <section class="py-16 lg:py-24 relative bg-dot-grid bg-lavender-bg border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="section-heading mb-12 lg:mb-16">
+        <h1
+          class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-text-primary mb-4 fade-up fade-up-1">
+          Meet the Team Behind <span class="text-purple-600">ROID-AI</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed fade-up fade-up-2">
+          We are a 4-member undergraduate thesis team from the Polytechnic University of the Philippines, engineering
+          deep learning architectures to automate genga-to-douga in-betweening for modern anime production.
+        </p>
+      </div>
+
+      <!-- Team Cards Grid (rendered from data/team.json by script.js) -->
+      <div id="teamGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-purple-900 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
+        <div class="col-span-2 md:col-span-1">
+          <div class="font-bold text-2xl text-white mb-2">ROID-AI</div>
+          <div class="text-base text-white/50 leading-relaxed max-w-sm">ROI-Guided Deformable Convolutions for
+            Automated Anime In-Betweening</div>
+        </div>
+        <div>
+          <div class="text-sm font-bold tracking-widest uppercase text-white/40 mb-4">Tool</div>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#tool">Try it free</a>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#gallery">Gallery</a>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#how-it-works">How it works</a>
+        </div>
+        <div>
+          <div class="text-sm font-bold tracking-widest uppercase text-white/40 mb-4">Support &amp; Team</div>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#scope">Scope &amp; Limits</a>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="index.html#faq">FAQ</a>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="team.html">Our Team</a>
+        </div>
+        <div>
+          <div class="text-sm font-bold tracking-widest uppercase text-white/40 mb-4">Legal &amp; Repo</div>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="https://github.com/Jeim25/ROID-AI" target="_blank" rel="noopener noreferrer">Model Repo</a>
+          <a class="block text-base text-white/70 no-underline mb-2.5 transition-colors duration-150 hover:text-white"
+            href="evaluation.html">Performance Metrics</a>
+        </div>
+      </div>
+      <hr class="border-white/10 my-10" />
+      <p class="text-sm text-white/40">© 2025 ROID-AI Thesis Group · Polytechnic University of the Philippines. Built
+        for anime production studios.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js?v=5"></script>
+</body>
+
+</html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROID-AI Performance Metrics — ATD12k Study</title>
-  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="dist/output.css?v=3" />
 </head>
 
 <body>
@@ -36,6 +36,8 @@
           href="index.html#scope">Scope</a>
         <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
           href="index.html#faq">FAQ</a>
+        <a class="text-base font-semibold text-text-secondary px-4 py-2 rounded-xl no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+          href="team.html">Our Team</a>
         <a href="index.html"
           class="ml-3 bg-purple-600 text-white text-base font-semibold px-5 py-2 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800 inline-flex items-center gap-2">
           <svg class="w-4 h-4 stroke-current fill-none" stroke-width="2.2" viewBox="0 0 24 24">
@@ -56,6 +58,8 @@
         href="index.html#scope">Scope</a>
       <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
         href="index.html#faq">FAQ</a>
+      <a class="text-base font-semibold text-text-secondary px-4 py-2.5 rounded-lg no-underline transition-colors duration-150 hover:text-purple-600 hover:bg-purple-50"
+        href="team.html">Our Team</a>
       <a href="index.html"
         class="mt-2 bg-purple-600 text-white text-base font-semibold text-center px-5 py-3 rounded-xl no-underline transition-colors duration-150 hover:bg-purple-800 inline-flex items-center justify-center gap-2">
         <svg class="w-4 h-4 stroke-current fill-none" stroke-width="2.2" viewBox="0 0 24 24">
@@ -68,10 +72,10 @@
 
   <!-- DASHBOARD (LAVENDER DOT-GRID BG) -->
   <section
-    class="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-12 lg:py-16 bg-lavender-bg bg-dot-grid border-b border-border scroll-mt-20"
+    class="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-12 lg:py-16 bg-lavender-bg bg-dot-grid border-b border-border"
     id="evaluation">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-      <div class="section-heading mb-8 lg:mb-10">
+      <div class="section-heading">
         <h2>Model Performance</h2>
         <p>Observed performance across easy, medium, and hard difficulty groups on the <span
             class="spec-mono font-medium">2,000</span> test triplets of the ATD-12k dataset.</p>
@@ -79,28 +83,28 @@
 
       <!-- Overall stat cards -->
       <div class="grid grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto mb-8 lg:mb-10" id="overallStats">
-        <article class="dashboard-card bg-card-bg">
+        <article class="dashboard-card">
           <span
             class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">PSNR</span>
           <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
             id="psnrMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="psnrSd">SD —</span>
         </article>
-        <article class="dashboard-card bg-card-bg">
+        <article class="dashboard-card">
           <span
             class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">SSIM</span>
           <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
             id="ssimMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="ssimSd">SD —</span>
         </article>
-        <article class="dashboard-card bg-card-bg">
+        <article class="dashboard-card">
           <span
             class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">LPIPS</span>
           <strong class="block text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-1.5 spec-mono"
             id="lpipsMean">—</strong>
           <span class="text-sm lg:text-base text-text-secondary spec-mono" id="lpipsSd">SD —</span>
         </article>
-        <article class="dashboard-card bg-card-bg">
+        <article class="dashboard-card">
           <span
             class="block text-xs sm:text-sm font-semibold tracking-widest uppercase text-purple-600 mb-2.5 spec-mono">Chamfer
             Distance</span>
@@ -112,9 +116,9 @@
 
       <!-- Category breakdown table -->
       <div class="text-center max-w-6xl mx-auto">
-        <h3 class="font-display text-xl lg:text-2xl font-bold text-text-primary mb-4">Easy / Medium / Hard Breakdown
+        <h3 class="text-xl lg:text-2xl text-text-primary mb-4">Easy / Medium / Hard Breakdown
         </h3>
-        <div class="overflow-x-auto card-base rounded-2xl p-2 sm:p-3 bg-card-bg">
+        <div class="overflow-x-auto card-base p-2 sm:p-3">
           <table class="w-full border-collapse">
             <thead>
               <tr class="border-b border-border">
@@ -175,7 +179,7 @@
   </section>
 
   <!-- COMPARISON (WHITE BG) -->
-  <section class="py-20 lg:py-28 bg-white border-b border-border scroll-mt-20" id="comparison">
+  <section class="py-20 lg:py-28 bg-white border-b border-border" id="comparison">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="section-heading">
         <h2>ROID-AI vs. AnimeInterp</h2>
@@ -260,7 +264,7 @@
         </div>
 
         <!-- Summary strip -->
-        <div class="flex items-center justify-center gap-10 mt-10 p-6 sm:p-7 card-base rounded-2xl flex-wrap">
+        <div class="flex items-center justify-center gap-10 mt-10 p-6 sm:p-7 card-base flex-wrap">
           <div class="flex flex-col items-center gap-1.5">
             <span class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-text-muted">ROID-AI wins</span>
             <span class="text-2xl sm:text-3xl font-bold text-success-text spec-mono" id="compCandidateWins">1 / 4</span>
@@ -316,7 +320,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js?v=5"></script>
 </body>
 
 </html>

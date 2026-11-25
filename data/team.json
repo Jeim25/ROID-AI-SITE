@@ -1,0 +1,74 @@
+[
+  {
+    "id": "member-1",
+    "name": "Jeim Vincent Ushiyama",
+    "role": "Project Lead | Researcher | Developer",
+    "bio": "Spearheaded the ROID-AI neural network architecture design, ROI-guided deformable convolution integration, and the official interactive research platform. Led the end-to-end implementation and repository workflows.",
+    "image": "assets/images/team-member-1.jpg",
+    "social": {
+      "github": "https://github.com/Jeim25",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "jeimvincentushiyama@gmail.com"
+    },
+    "contributions": [
+      "Engineered ROI detection & deformable convolution layers",
+      "Architected the web UI & evaluation benchmark dashboards",
+      "Managed repository pipelines and model deployment interfaces"
+    ]
+  },
+  {
+    "id": "member-2",
+    "name": "Luke Alexander Pons",
+    "role": "Lead Developer | Researcher",
+    "bio": "Focused on mathematical modeling of non-linear character motions, deformable offset estimation, and optical flow refinements to eliminate ghosting artifacts across large displacement keyframes.",
+    "image": "assets/images/team-member-2.jpg",
+    "social": {
+      "github": "https://github.com/LukeyHikari",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "lukerosetepons@gmail.com"
+    },
+    "contributions": [
+      "Formulated 2D offset sampling for fast character animations",
+      "Conducted loss function optimization (L1, Perceptual & Smoothness)",
+      "Authored methodology & related works research literature"
+    ]
+  },
+  {
+    "id": "member-3",
+    "name": "Kerr Matthew Nallos",
+    "role": "Researcher | Developer",
+    "bio": "Managed the ATD-12K dataset curation, high-resolution keyframe pairing, data augmentation pipelines, and motion difficulty classification into Easy, Medium, and Hard cohorts.",
+    "image": "assets/images/team-member-3.jpg",
+    "social": {
+      "github": "https://github.com/kerr72104",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "kerr21nallos21@gmail.com"
+    },
+    "contributions": [
+      "Curated & normalized 2,000+ ATD-12k test triplets",
+      "Engineered data loaders and bounding box ROI annotators",
+      "Co-authored dataset methodology and validation documentation"
+    ]
+  },
+  {
+    "id": "member-4",
+    "name": "Will Andrew Mercado",
+    "role": "Researcher | Developer",
+    "bio": "Led quantitative validation across PSNR, SSIM, LPIPS, and Chamfer Distance metrics. Designed comparative benchmarks between ROID-AI and baseline state-of-the-art models like AnimeInterp.",
+    "image": "assets/images/team-member-4.jpg",
+    "social": {
+      "github": "https://github.com/MercxW",
+      "linkedin": "#",
+      "facebook": "#",
+      "email": "willandrewmercado@gmail.com"
+    },
+    "contributions": [
+      "Executed statistical metric computations across 2k triplets",
+      "Created qualitative visual comparison reports for anime studios",
+      "Led thesis results documentation and comparative analyses"
+    ]
+  }
+]
