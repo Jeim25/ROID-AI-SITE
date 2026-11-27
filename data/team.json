@@ -3,7 +3,7 @@
     "id": "member-1",
     "name": "Jeim Vincent Ushiyama",
     "role": "Project Lead | Researcher | Developer",
-    "bio": "Spearheaded the ROID-AI neural network architecture design, ROI-guided deformable convolution integration, and the official interactive research platform. Led the end-to-end implementation and repository workflows.",
+    "bio": "Spearheaded the development of a region-aware Video Frame Interpolation framework for anime production, extending AnimeInterp with ROI-guided prioritization and deformable convolutions. His work spans the full project, from model design to the public-facing research platform. ",
     "image": "assets/images/team-member-1.jpg",
     "social": {
       "github": "https://github.com/Jeim25",
@@ -12,16 +12,15 @@
       "email": "jeimvincentushiyama@gmail.com"
     },
     "contributions": [
-      "Engineered ROI detection & deformable convolution layers",
-      "Architected the web UI & evaluation benchmark dashboards",
-      "Managed repository pipelines and model deployment interfaces"
+      "Designed and implemented the ROI detection mechanism, which fuses Gabor texture analysis and optical flow magnitude into a single attention map.",
+      "Architected the web UI & evaluation benchmark dashboards"
     ]
   },
   {
     "id": "member-2",
     "name": "Luke Alexander Pons",
     "role": "Lead Developer | Researcher",
-    "bio": "Focused on mathematical modeling of non-linear character motions, deformable offset estimation, and optical flow refinements to eliminate ghosting artifacts across large displacement keyframes.",
+    "bio": "Directed the system architecture of an enhanced animation frame interpolation model built upon Deformable Convolutional Neural Networks and Region of Interest maps.",
     "image": "assets/images/team-member-2.jpg",
     "social": {
       "github": "https://github.com/LukeyHikari",
@@ -30,16 +29,16 @@
       "email": "lukerosetepons@gmail.com"
     },
     "contributions": [
-      "Formulated 2D offset sampling for fast character animations",
-      "Conducted loss function optimization (L1, Perceptual & Smoothness)",
-      "Authored methodology & related works research literature"
+      "Implemented the feature extraction and flow estimation components using Python and PyTorch.",
+      "Deployed model training on Google Cloud with checkpoint saving and resumability to mitigate virtual machine interruptions.",
+      "Containerized the training pipeline using Docker to ensure reproducibility across different machines."
     ]
   },
   {
     "id": "member-3",
     "name": "Kerr Matthew Nallos",
     "role": "Researcher | Developer",
-    "bio": "Managed the ATD-12K dataset curation, high-resolution keyframe pairing, data augmentation pipelines, and motion difficulty classification into Easy, Medium, and Hard cohorts.",
+    "bio": "Contributed to the development of a model for automated anime in-betweening, with an emphasis on improving motion interpolation accuracy.",
     "image": "assets/images/team-member-3.jpg",
     "social": {
       "github": "https://github.com/kerr72104",
@@ -48,16 +47,15 @@
       "email": "kerr21nallos21@gmail.com"
     },
     "contributions": [
-      "Curated & normalized 2,000+ ATD-12k test triplets",
-      "Engineered data loaders and bounding box ROI annotators",
-      "Co-authored dataset methodology and validation documentation"
+      "Implemented the Flow Estimation module of the model.",
+      "Investigated RoI-guided approaches to address the limitations of kernel-based video frame interpolation methods."
     ]
   },
   {
     "id": "member-4",
     "name": "Will Andrew Mercado",
     "role": "Researcher | Developer",
-    "bio": "Led quantitative validation across PSNR, SSIM, LPIPS, and Chamfer Distance metrics. Designed comparative benchmarks between ROID-AI and baseline state-of-the-art models like AnimeInterp.",
+    "bio": "Implemented the model's synthesis components and established the evaluation framework used to validate output quality.",
     "image": "assets/images/team-member-4.jpg",
     "social": {
       "github": "https://github.com/MercxW",
@@ -66,9 +64,8 @@
       "email": "willandrewmercado@gmail.com"
     },
     "contributions": [
-      "Executed statistical metric computations across 2k triplets",
-      "Created qualitative visual comparison reports for anime studios",
-      "Led thesis results documentation and comparative analyses"
+      "Implemented DCNv2, Laplacian blending, and flow scaling within the synthesis module.",
+      "Selected and implemented the evaluation metrics (PSNR, SSIM, LPIPS, and Chamfer Distance) to assess model performance."
     ]
   }
 ]
